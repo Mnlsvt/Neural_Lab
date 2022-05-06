@@ -1,12 +1,16 @@
-const fullname = document.getElementById("fullname")
-const fathername = document.getElementById("fathername")
-const age = document.getElementById("age")
-const phone = document.getElementById("telno")
-const email = document.getElementById("email")
-const taxno = document.getElementById("taxno")
-const securityno = document.getElementById("securityno")
-const form = document.getElementById("form")
+function validation()
+{
+    // Full name one space between, no special chars
+    var fullname = document.getElementById("fullname")
+    //var fullnameRGEX =
 
-form.addEventListener('submit', (e) => {
-    e.preventDefault()
-})
+    var fathername = document.getElementById("fathername")
+    var age = document.getElementById("age")
+    var phone = document.getElementById("telno")
+    var email = document.getElementById("email")
+    var taxno = document.getElementById("taxno")
+    var securityno = document.getElementById("securityno")
+    var form = document.getElementById("form")
+
+    
+}

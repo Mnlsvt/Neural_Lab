@@ -47,7 +47,7 @@
             <center><h2 class="subscribe_text">Subscribe to our lab.</h2></center>
             
             <div class = "subscription_form">
-                <form id="form" action="/success.html"> <!-- redirection to a confirmation message-->
+                <form id="form" action="" onsubmit="validation()"> <!-- validate with JS-->
                     <label for="fullname">Full name</label> <!-- full name, max 50 characters and required field, must not contain special character (only one space)-->
                     <input type="text" id="fullname" name="full_name" placeholder="Your full name.." maxlength="50" required>  
                     <label for="fathername">Father name</label> <!-- first name, max 30 characters and optional field-->
