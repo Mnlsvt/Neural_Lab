@@ -1,0 +1,767 @@
+//Genikes morfopoihseis pou isxuoun gia ola ta arxeia.
+
+body{
+    background: #e9f0e8;
+    padding: 0%;
+    margin: 0%;
+}
+
+ul{
+    text-decoration: none;
+    list-style-type: none;
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+.welcome-sect{
+    font-family: 'Alegreya', serif;
+    margin-left: 1.5em;
+    margin-top: 4em;
+    margin-bottom: 4em;
+    font-size: 1rem;
+    font-weight: bold;
+    animation: welcomeLoad 2s forwards;
+}
+
+
+nav{
+    font-family: 'Alegreya', serif;
+    font-weight: bold;
+    font-style: italic;
+    position: fixed;
+    right: 0;
+    top: 0;
+    background: #52796f;
+    height: 100vh;
+    width:50%;
+    z-index: 999;
+    text-transform: uppercase;
+    transform:  translateX(100%);
+    transition: transform 0.5s ease-in-out;
+
+    ul{
+        list-style-type: none;
+        padding: 0;
+        margin-top: 8em;
+
+        a{
+            color: black;
+            padding: 0.75em 2em;
+            display: block;
+
+            &:hover{
+                background: grey;
+            }
+        }
+    }
+
+    .close{
+        float: right;
+        margin: 2em;
+        width: 2.5em;
+    }
+}
+
+
+header{
+    display: flex;
+    justify-content: space-between;
+
+    svg{
+        width: 2em;
+        margin-top: 0.5em;
+        margin-right: 0.5em;
+        cursor: pointer;
+    }
+}
+
+.open-nav{
+    transform: translateX(0%);
+}
+
+
+
+//Home page - index file
+
+.logo{
+    font-family: 'Lobster', cursive;
+    color: #2f3e46;
+    text-decoration: none;
+    font-size: 2rem;
+    text-align: center;
+    font-style: italic;
+    //font-weight: bold;
+    margin-left: 0.5em;
+
+    span{
+        color: #84a98c;
+    }
+}
+
+
+.intro{
+    h2{
+        font-family: 'Alegreya', serif;
+        margin-left: 2em;
+        //margin-bottom: 4em;
+        //font-size: 1rem;
+        //font-weight: bold;
+        width: 18rem;
+        margin-bottom: 1.5em;
+    }
+
+    img{
+        position: relative;
+        width: 80vw;
+        display: flex;
+        margin-left: 2em;
+        margin-right: 2em;
+        height: 200px;
+    }
+
+    .home-image1{
+        z-index: 4;
+        animation: introimages1anim 3s forwards;
+        animation-delay: 5s;
+    }
+    
+    .home-image2{
+        z-index: 3;
+        animation: introimages1anim 3s forwards;
+        animation-delay: 18s;
+        margin-top: -200px;
+    }
+
+    .home-image3{
+        z-index: 2;
+        animation: introimages1anim 3s forwards;
+        animation-delay: 29s;
+        margin-top: -200px;
+    }
+
+    .home-image4{
+        z-index: 1;
+        margin-top: -200px;
+    }
+    
+}
+
+.appointment-text{
+    
+    h2{
+        color: black;
+        margin-top: 3em;
+    }
+    
+}
+
+footer{
+    margin: 0;
+    padding: 0;
+    margin-top: 4em;
+}
+
+.contact-text{
+    margin-top: 7em;
+    margin-left: 1em;
+    margin-bottom: 0.5em;
+}
+
+.contacts{
+    padding: 0;
+    margin: 0;
+    margin-left: 1em;
+    
+
+    img{
+        float: left;
+        width: 1.5em;
+        margin: 0;
+        padding: 0;
+        display: flex;
+    }
+
+    .first-element{
+        
+        display: flex;
+        h3{
+            margin: 0;
+            width: 15rem;
+        }
+    }
+
+    .second-element{
+        display: flex;
+        margin-top: 0.5em;
+
+        h3{
+            color: black;
+            margin: 0;
+            width: 15rem;
+        }
+    }
+
+    .third-element{
+        display: flex;
+        margin-top: 0.5em;
+        margin-bottom: 1em;
+        h3{
+            color: black;
+            margin: 0;
+            width: 15rem;
+        }
+    }
+}
+
+.aboutus{
+    .aboutus-text{
+        margin-top: 3em;
+        margin-left: 1em;
+        margin-bottom: 0.5em;
+    }
+
+    .aboutus-content{
+        margin-top: 0.5rem;
+        margin-bottom: 1rem;
+        padding: 0;
+        margin-left: 2rem;
+        color: black;
+        width: 15rem;
+    }
+}
+
+.google-maps{
+    .find-us-text{
+        text-align: left;
+        margin-top: 3em;
+        margin-left: 1em;
+        margin-bottom: 0.5em;
+        color: black;
+    }
+    .mapouter{
+        margin-left: 1em;
+    
+        .gmap-canvas{
+            
+        }
+        //margin-top: 4em;
+    
+    }
+}
+
+
+//Services file
+
+
+.eikones{
+    img{
+        width: 50vw;
+        height: 22vh;
+        margin-left: 0.5em;
+        margin-top: 0.5em;
+    }
+}
+
+.eikona-right{
+    opacity: 0%;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+
+    .content{
+        font-family: 'Alegreya', serif;
+        font-weight: bold;
+        text-align: left;
+        width: 10em;
+        margin-left: 0.5em;
+    }
+}
+
+.eikona-left{
+    opacity: 0%;
+    display: grid;
+    grid-template-areas: 
+        "left right";
+
+
+    .content{
+        font-family: 'Alegreya', serif;
+        font-weight: bold;
+        text-align: left;
+        width: 10em;
+        justify-self: left;
+        grid-area: right;
+        margin-right: 0.5em;
+        margin-left: 0.5em;
+
+    }
+}
+
+
+.prwto{
+    animation: fadeAnim 1s forwards;
+    animation-delay: 0.5s;
+}
+
+.deutero{
+    animation: fadeAnim 1s forwards;
+    animation-delay: 1.5s;
+}
+
+.trito{
+    animation: fadeAnim 1s forwards;
+    animation-delay: 2.5s;
+    margin-bottom: 5em;
+}
+
+.dark{
+    margin-top: 100%;
+}
+
+
+//Activities file
+
+.list-of-activities{
+    ul{
+        list-style: disc;
+        font-size: 1.5rem;
+    }
+    li{
+        width: 90vw;
+        padding-bottom: 2em;
+    }
+    .list-title{
+        list-style-type: none;
+        font-weight: bold;
+        padding-bottom: 1em;
+    }
+}
+
+//appointment file
+.booking_form {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+  
+  input[type=text], select, input[type=date] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  
+  .sbmt_button {
+    width: 100%;
+    background-color: #2f3e46;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+
+    &:hover{
+        background-color:#52796f;
+    }
+  }
+
+
+
+//success file
+.confirmation-message{
+    h2{
+        margin-bottom: 2em;
+    }
+    a{
+        color: black;
+    }
+    text-align: center;
+    margin-top: 20vh;
+
+}
+
+
+
+//subscription file
+.subscription_form{
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    margin-left: 2em;
+    margin-right: 2em;
+}
+
+
+
+
+
+//responsiveness
+
+//Kathe allagh se auto to sector exei na kanei me tis allages pou ginontai otan allazei to megethos ths othonhs. Auto metrietai se pixels kai 
+//oi allages pou kaname lamvanoun thesh sta 640, 750, 1300 kai 1700 pixels.
+
+@media only screen and (min-width: 640px){
+
+    .eikona-left{
+
+        .content{
+            width: 20rem;
+        }
+    }
+
+    .eikona-right{
+        .content{
+            width: 20rem;
+        }
+    }
+
+    .eikones{
+        width: 25vw;
+    }
+
+    .deutero{
+        a{
+            img{
+                margin-right: 3.5em;
+            }            
+        }
+    }
+
+    footer{
+        display: flex;
+    }
+
+    .subscription_form{
+        margin-left: 5em;
+        margin-right: 5em;
+    }
+}
+
+
+
+@media only screen and (min-width: 750px){
+
+    .eikones{
+        img{
+            width: 50vw;
+            height: 25vh;
+            margin-left: 3.5em;
+            margin-top: 0.5em;
+        }
+    }
+
+    .eikona-right{
+        .content{
+            margin-left: 3.5em;
+        }
+    }
+
+    .eikona-left{
+        margin-right: 3.5em;
+    }
+    
+
+    .menu{
+        display: none;
+    }
+
+    .logo{
+        display: inline-flex;        
+    }
+
+    nav{
+        transform: translateX(0);
+        position: unset;
+        display: block;
+        width: auto;
+        height: auto;
+        background: none;
+
+
+        svg.close{
+            display: none
+        }
+        
+
+        ul{
+            display: flex;
+            margin: 0;
+            li{
+                color: black;
+                padding: 0.5em 0em;
+                text-align: center;
+                font-size: 1rem;
+
+                &:hover{
+                    background: none;
+                    color: black;
+                }
+            }
+        }
+    }
+
+    .dark{
+        margin-top: 0%;
+        //padding-left: 4em;
+        margin-right: 0;
+    }
+
+    
+    .intro{
+        .intro-text{
+            text-align: center;
+            width: 35rem;
+            margin-left: 15vw;
+            
+        }
+    }
+
+    .aboutus{
+
+        .aboutus-content{
+            width: 30rem;
+            display: flex;
+            h4{
+                margin-right: 4em;
+            }
+        }
+    }
+
+    .contact-text{
+        margin-top: 3em;
+        margin-bottom: 2em;
+    }
+
+    .subscription_form{
+        margin-left: 10em;
+        margin-right: 10em;
+    }
+}
+
+
+@media only screen and (min-width: 930px){
+    
+    .eikones{
+        img{
+            width: 500px;
+            height: 300px;
+        }
+        
+    }
+    
+    .eikona-right{
+        margin-left: 80%;
+        margin-right: 0;
+        padding: 0;
+        
+        .content{
+            width: 25rem;
+            padding-top: 6rem;
+            text-align: right;
+        }
+    }
+
+    .eikona-left{
+        margin-left: 20%;
+        .content{
+            width: 25rem;
+            padding-top: 6rem;
+            text-align: left;
+            margin-left: 1em;
+        }
+    }
+
+    .intro{
+
+        img{
+            height: 300px;
+        }
+
+        .intro-text{
+            text-align: center;
+            width: 45rem;
+            margin-left: 14vw;
+        }
+
+        .intro-images{
+            .home-image1{
+                width: 70vw;
+            }   
+
+            .home-image2{
+                width: 70vw;
+                margin-top: -300px;
+            }
+
+            .home-image3{
+                width: 70vw;
+                margin-top: -300px;
+            }
+
+            .home-image4{
+                width: 70vw;
+                margin-top: -300px;
+            }
+        }
+        
+    }
+        
+    .subscription_form{
+        margin-left: 15em;
+        margin-right: 15em;
+    }
+}
+
+
+@media only screen and (min-width: 1300px){
+    .eikones{
+        img{
+            width: 500px;
+            height: 300px;
+        }
+        
+    }
+
+    .eikona-right{
+        align-self: center;
+        //a{
+        //    margin-left: 80%;
+        //}
+        
+        .content{
+            padding-top: 6rem;
+            text-align: right;
+            margin-left: 1em;
+        }
+    }
+
+    .eikona-left{
+        align-self: center;
+        //a{
+        //    margin-left: 20%;
+        //}
+        
+        .content{
+            padding-top: 6rem;
+        }
+    }
+
+    .intro{
+
+        img{
+            height: 500px;
+        }
+
+        .intro-text{
+            text-align: center;
+            width: 45rem;
+            margin-left: 26vw;
+            
+        }
+
+        .intro-images{
+            .home-image1{
+                width: 65vw;
+            }   
+
+            .home-image2{
+                width: 65vw;
+                margin-top: -500px;
+            }
+
+            .home-image3{
+                width: 65vw;
+                margin-top: -500px;
+            }
+
+            .home-image4{
+                width: 65vw;
+                margin-top: -500px;
+            }
+        }   
+    }
+    .appointment-text{
+        font-size: 2rem;
+    }
+
+    footer{
+        margin-left: 16vw;
+    }
+
+    .subscription_form{
+        margin-left: 20em;
+        margin-right: 20em;
+    }
+}
+
+@media only screen and (min-width: 1700px){
+    .eikones{
+        img{
+            margin-left: 15em;
+        }
+    }
+
+    .intro{
+        .intro-text{
+            margin-left: 30vw;
+        }
+    }
+
+    .contacts{
+        margin-right: 8em;
+    }
+
+    .google-maps{
+        margin-left: 8em;
+    }
+
+    .subscription_form{
+        margin-left: 25em;
+        margin-right: 25em;
+    }
+}
+
+//Animations
+
+@keyframes fadeAnim{
+    //Allazei to opacity apo ena element apo 0% se 100% me orismeno delay kathe fora dhmiourgontas to antitheto effect apo to fade.
+    from{
+        opacity: 0%;
+    }
+    to{
+        opacity: 100%;
+    }
+}
+
+
+@keyframes welcomeLoad{
+    //Kanei ena element na emfanizetai apo ta aristera pros ta deksia me orismeno delay kathe fora dhmiourgontas ena effect kseskepasmatos.
+    from{
+        clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+    }
+    to{
+        clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+    }
+}
+
+@keyframes introimages1anim{
+    //Eksafanizei ena element apo deksia pros ta aristera me orismeno delay dhmiourgontas ena effect skepasmatos.
+    from{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+    to{
+        clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+    }
+}
+
+
+
+//isabella 

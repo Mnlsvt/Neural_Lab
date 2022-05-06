@@ -1,0 +1,684 @@
+body {
+  background: #e9f0e8;
+  padding: 0%;
+  margin: 0%;
+}
+
+ul {
+  text-decoration: none;
+  list-style-type: none;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.welcome-sect {
+  font-family: 'Alegreya', serif;
+  margin-left: 1.5em;
+  margin-top: 4em;
+  margin-bottom: 4em;
+  font-size: 1rem;
+  font-weight: bold;
+  -webkit-animation: welcomeLoad 2s forwards;
+          animation: welcomeLoad 2s forwards;
+}
+
+nav {
+  font-family: 'Alegreya', serif;
+  font-weight: bold;
+  font-style: italic;
+  position: fixed;
+  right: 0;
+  top: 0;
+  background: #52796f;
+  height: 100vh;
+  width: 50%;
+  z-index: 999;
+  text-transform: uppercase;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  transition: -webkit-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 8em;
+}
+
+nav ul a {
+  color: black;
+  padding: 0.75em 2em;
+  display: block;
+}
+
+nav ul a:hover {
+  background: grey;
+}
+
+nav .close {
+  float: right;
+  margin: 2em;
+  width: 2.5em;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+header svg {
+  width: 2em;
+  margin-top: 0.5em;
+  margin-right: 0.5em;
+  cursor: pointer;
+}
+
+.open-nav {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+}
+
+.logo {
+  font-family: 'Lobster', cursive;
+  color: #2f3e46;
+  text-decoration: none;
+  font-size: 2rem;
+  text-align: center;
+  font-style: italic;
+  margin-left: 0.5em;
+}
+
+.logo span {
+  color: #84a98c;
+}
+
+.intro h2 {
+  font-family: 'Alegreya', serif;
+  margin-left: 2em;
+  width: 18rem;
+  margin-bottom: 1.5em;
+}
+
+.intro img {
+  position: relative;
+  width: 80vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 2em;
+  margin-right: 2em;
+  height: 200px;
+}
+
+.intro .home-image1 {
+  z-index: 4;
+  -webkit-animation: introimages1anim 3s forwards;
+          animation: introimages1anim 3s forwards;
+  -webkit-animation-delay: 5s;
+          animation-delay: 5s;
+}
+
+.intro .home-image2 {
+  z-index: 3;
+  -webkit-animation: introimages1anim 3s forwards;
+          animation: introimages1anim 3s forwards;
+  -webkit-animation-delay: 18s;
+          animation-delay: 18s;
+  margin-top: -200px;
+}
+
+.intro .home-image3 {
+  z-index: 2;
+  -webkit-animation: introimages1anim 3s forwards;
+          animation: introimages1anim 3s forwards;
+  -webkit-animation-delay: 29s;
+          animation-delay: 29s;
+  margin-top: -200px;
+}
+
+.intro .home-image4 {
+  z-index: 1;
+  margin-top: -200px;
+}
+
+.appointment-text h2 {
+  color: black;
+  margin-top: 3em;
+}
+
+footer {
+  margin: 0;
+  padding: 0;
+  margin-top: 4em;
+}
+
+.contact-text {
+  margin-top: 7em;
+  margin-left: 1em;
+  margin-bottom: 0.5em;
+}
+
+.contacts {
+  padding: 0;
+  margin: 0;
+  margin-left: 1em;
+}
+
+.contacts img {
+  float: left;
+  width: 1.5em;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.contacts .first-element {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.contacts .first-element h3 {
+  margin: 0;
+  width: 15rem;
+}
+
+.contacts .second-element {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 0.5em;
+}
+
+.contacts .second-element h3 {
+  color: black;
+  margin: 0;
+  width: 15rem;
+}
+
+.contacts .third-element {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+}
+
+.contacts .third-element h3 {
+  color: black;
+  margin: 0;
+  width: 15rem;
+}
+
+.aboutus .aboutus-text {
+  margin-top: 3em;
+  margin-left: 1em;
+  margin-bottom: 0.5em;
+}
+
+.aboutus .aboutus-content {
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  padding: 0;
+  margin-left: 2rem;
+  color: black;
+  width: 15rem;
+}
+
+.google-maps .find-us-text {
+  text-align: left;
+  margin-top: 3em;
+  margin-left: 1em;
+  margin-bottom: 0.5em;
+  color: black;
+}
+
+.google-maps .mapouter {
+  margin-left: 1em;
+}
+
+.eikones img {
+  width: 50vw;
+  height: 22vh;
+  margin-left: 0.5em;
+  margin-top: 0.5em;
+}
+
+.eikona-right {
+  opacity: 0%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (auto)[2];
+      grid-template-columns: repeat(2, auto);
+}
+
+.eikona-right .content {
+  font-family: 'Alegreya', serif;
+  font-weight: bold;
+  text-align: left;
+  width: 10em;
+  margin-left: 0.5em;
+}
+
+.eikona-left {
+  opacity: 0%;
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "left right";
+}
+
+.eikona-left .content {
+  font-family: 'Alegreya', serif;
+  font-weight: bold;
+  text-align: left;
+  width: 10em;
+  -ms-grid-column-align: left;
+      justify-self: left;
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: right;
+  margin-right: 0.5em;
+  margin-left: 0.5em;
+}
+
+.prwto {
+  -webkit-animation: fadeAnim 1s forwards;
+          animation: fadeAnim 1s forwards;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+
+.deutero {
+  -webkit-animation: fadeAnim 1s forwards;
+          animation: fadeAnim 1s forwards;
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
+}
+
+.trito {
+  -webkit-animation: fadeAnim 1s forwards;
+          animation: fadeAnim 1s forwards;
+  -webkit-animation-delay: 2.5s;
+          animation-delay: 2.5s;
+  margin-bottom: 5em;
+}
+
+.dark {
+  margin-top: 100%;
+}
+
+.list-of-activities ul {
+  list-style: disc;
+  font-size: 1.5rem;
+}
+
+.list-of-activities li {
+  width: 90vw;
+  padding-bottom: 2em;
+}
+
+.list-of-activities .list-title {
+  list-style-type: none;
+  font-weight: bold;
+  padding-bottom: 1em;
+}
+
+.booking_form {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+input[type=text], select, input[type=date] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.sbmt_button {
+  width: 100%;
+  background-color: #2f3e46;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.sbmt_button:hover {
+  background-color: #52796f;
+}
+
+.confirmation-message {
+  text-align: center;
+  margin-top: 20vh;
+}
+
+.confirmation-message h2 {
+  margin-bottom: 2em;
+}
+
+.confirmation-message a {
+  color: black;
+}
+
+.subscription_form {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  margin-left: 2em;
+  margin-right: 2em;
+}
+
+@media only screen and (min-width: 640px) {
+  .eikona-left .content {
+    width: 20rem;
+  }
+  .eikona-right .content {
+    width: 20rem;
+  }
+  .eikones {
+    width: 25vw;
+  }
+  .deutero a img {
+    margin-right: 3.5em;
+  }
+  footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .subscription_form {
+    margin-left: 5em;
+    margin-right: 5em;
+  }
+}
+
+@media only screen and (min-width: 750px) {
+  .eikones img {
+    width: 50vw;
+    height: 25vh;
+    margin-left: 3.5em;
+    margin-top: 0.5em;
+  }
+  .eikona-right .content {
+    margin-left: 3.5em;
+  }
+  .eikona-left {
+    margin-right: 3.5em;
+  }
+  .menu {
+    display: none;
+  }
+  .logo {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+  }
+  nav {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    position: unset;
+    display: block;
+    width: auto;
+    height: auto;
+    background: none;
+  }
+  nav svg.close {
+    display: none;
+  }
+  nav ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0;
+  }
+  nav ul li {
+    color: black;
+    padding: 0.5em 0em;
+    text-align: center;
+    font-size: 1rem;
+  }
+  nav ul li:hover {
+    background: none;
+    color: black;
+  }
+  .dark {
+    margin-top: 0%;
+    margin-right: 0;
+  }
+  .intro .intro-text {
+    text-align: center;
+    width: 35rem;
+    margin-left: 15vw;
+  }
+  .aboutus .aboutus-content {
+    width: 30rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .aboutus .aboutus-content h4 {
+    margin-right: 4em;
+  }
+  .contact-text {
+    margin-top: 3em;
+    margin-bottom: 2em;
+  }
+  .subscription_form {
+    margin-left: 10em;
+    margin-right: 10em;
+  }
+}
+
+@media only screen and (min-width: 930px) {
+  .eikones img {
+    width: 500px;
+    height: 300px;
+  }
+  .eikona-right {
+    margin-left: 80%;
+    margin-right: 0;
+    padding: 0;
+  }
+  .eikona-right .content {
+    width: 25rem;
+    padding-top: 6rem;
+    text-align: right;
+  }
+  .eikona-left {
+    margin-left: 20%;
+  }
+  .eikona-left .content {
+    width: 25rem;
+    padding-top: 6rem;
+    text-align: left;
+    margin-left: 1em;
+  }
+  .intro img {
+    height: 300px;
+  }
+  .intro .intro-text {
+    text-align: center;
+    width: 45rem;
+    margin-left: 14vw;
+  }
+  .intro .intro-images .home-image1 {
+    width: 70vw;
+  }
+  .intro .intro-images .home-image2 {
+    width: 70vw;
+    margin-top: -300px;
+  }
+  .intro .intro-images .home-image3 {
+    width: 70vw;
+    margin-top: -300px;
+  }
+  .intro .intro-images .home-image4 {
+    width: 70vw;
+    margin-top: -300px;
+  }
+  .subscription_form {
+    margin-left: 15em;
+    margin-right: 15em;
+  }
+}
+
+@media only screen and (min-width: 1300px) {
+  .eikones img {
+    width: 500px;
+    height: 300px;
+  }
+  .eikona-right {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+  .eikona-right .content {
+    padding-top: 6rem;
+    text-align: right;
+    margin-left: 1em;
+  }
+  .eikona-left {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+  .eikona-left .content {
+    padding-top: 6rem;
+  }
+  .intro img {
+    height: 500px;
+  }
+  .intro .intro-text {
+    text-align: center;
+    width: 45rem;
+    margin-left: 26vw;
+  }
+  .intro .intro-images .home-image1 {
+    width: 65vw;
+  }
+  .intro .intro-images .home-image2 {
+    width: 65vw;
+    margin-top: -500px;
+  }
+  .intro .intro-images .home-image3 {
+    width: 65vw;
+    margin-top: -500px;
+  }
+  .intro .intro-images .home-image4 {
+    width: 65vw;
+    margin-top: -500px;
+  }
+  .appointment-text {
+    font-size: 2rem;
+  }
+  footer {
+    margin-left: 16vw;
+  }
+  .subscription_form {
+    margin-left: 20em;
+    margin-right: 20em;
+  }
+}
+
+@media only screen and (min-width: 1700px) {
+  .eikones img {
+    margin-left: 15em;
+  }
+  .intro .intro-text {
+    margin-left: 30vw;
+  }
+  .contacts {
+    margin-right: 8em;
+  }
+  .google-maps {
+    margin-left: 8em;
+  }
+  .subscription_form {
+    margin-left: 25em;
+    margin-right: 25em;
+  }
+}
+
+@-webkit-keyframes fadeAnim {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+
+@keyframes fadeAnim {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+
+@-webkit-keyframes welcomeLoad {
+  from {
+    -webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+            clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+  }
+  to {
+    -webkit-clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+            clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+  }
+}
+
+@keyframes welcomeLoad {
+  from {
+    -webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+            clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+  }
+  to {
+    -webkit-clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+            clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+  }
+}
+
+@-webkit-keyframes introimages1anim {
+  from {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+  to {
+    -webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+            clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+  }
+}
+
+@keyframes introimages1anim {
+  from {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+  to {
+    -webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+            clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+  }
+}
+/*# sourceMappingURL=main.css.map */
