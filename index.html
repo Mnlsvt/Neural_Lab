@@ -12,8 +12,12 @@
         <!-- auto einai gia thn allagh ths css-->
         <link rel="alternate stylesheet" type="text/css" href="css/main.css" title="light-mode" />
 	    <link rel="alternate stylesheet" type="text/css" href="css/main-dark.css" title="dark-mode" />
+        <link rel="alternate stylesheet" type="text/css" href="css/vision-help.css" title="vision-help" />
+        <link rel="alternate stylesheet" type="text/css" href="css/vision-help-dark.css" title="vision-help-dark" />
 
         <script type="text/javascript" src="javascript/styleswitcher.js"></script>
+        <script type="text/javascript" src="javascript/voice.js"></script>
+
         
         <title>Neuro Labs.</title>
 
@@ -53,8 +57,8 @@
                             na einai pio skoteina. Ola auta ta .html arxeia vriskontai ston fakelo "darks" kai to linking metaksu tous allazei apo arxeio
                             se arxeio. (To koumpi metatrepetai se "Light mode" otan eimaste se dark selida.)
                         -->
-                        <li><a href="#" onclick="setActiveStyleSheet('dark-mode'); return false;">Dark Mode</a></li>
-                        <li><a href="#" onclick="setActiveStyleSheet('light-mode'); return false;">Light Mode</a></li>
+                        <li><a class="dark_mode_button" href="#" onclick="setActiveStyleSheet('dark-mode'); return false;">Dark Mode</a></li>
+                        <li class="light_mode_button"><a href="#" onclick="setActiveStyleSheet('light-mode'); return false;">Light Mode</a></li>
                     </ul>
                 </nav>
 
@@ -133,6 +137,9 @@
                         </div>
                     </div>
                 </div>                
+
+                
+                
             </footer>
             
 
@@ -154,10 +161,19 @@
                 close.addEventListener("click", () =>{
                     nav.classList.remove("open-nav")
                 })
+
+                //window.speechSynthesis.speak(new SpeechSynthesisUtterance('ska ta'));
             </script>
 
 
+            <a class="zoom_in-light" href="#" onclick="setActiveStyleSheet('vision-help'); return false;"><img class="zoom_in-light" src="images/zoom_in.png"></a>
+            <a class="zoom_out-light" href="#" onclick="setActiveStyleSheet('light-mode'); return false;"><img class="zoom_out-light" src="images/zoom_out.png"></a>
 
+            <a class="zoom_in-dark" href="#" onclick="setActiveStyleSheet('vision-help-dark'); return false;"><img class="zoom_in-dark" src="images/zoom_in.png"></a>
+            <a class="zoom_out-dark" href="#" onclick="setActiveStyleSheet('dark-mode'); return false;"><img class="zoom_out-dark" src="images/zoom_out.png"></a>
+
+            <a href="#" onclick="voice_help1(); return false;"><img class="voice_help1" src="images/voice.png"></a>
+            <a href="#" onclick="voice_help2(); return false;"><img class="voice_help2" src="images/voice.png"></a>
 
         </body>
 </html>

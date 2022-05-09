@@ -5,6 +5,15 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="css/main.css" rel="stylesheet">
+
+        <!-- auto einai gia thn allagh ths css-->
+        <link rel="alternate stylesheet" type="text/css" href="css/main.css" title="light-mode" />
+	    <link rel="alternate stylesheet" type="text/css" href="css/main-dark.css" title="dark-mode" />
+        <link rel="alternate stylesheet" type="text/css" href="css/vision-help.css" title="vision-help" />
+
+        <script type="text/javascript" src="javascript/styleswitcher.js"></script>
+        <script type="text/javascript" src="javascript/voice.js"></script>
+
         <title>Neuro Labs.</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,7 +35,8 @@
                         <li><a href="services.html">Services</a></li>
                         <li><a href="activities.html">Activities</a></li>
                         <li><a href="appointment.html">Book an appointment</a></li>
-                        <li><a class="dark" href="darks/services-dark.html">Dark Mode</a></li>
+                        <li><a class="dark_mode_button" href="#" onclick="setActiveStyleSheet('dark-mode'); return false;">Dark Mode</a></li>
+                        <li class="light_mode_button"><a href="#" onclick="setActiveStyleSheet('light-mode'); return false;">Light Mode</a></li>
                     </ul>                        
 
                 </nav>
@@ -99,6 +109,11 @@
                 })
 
             </script>
+
+            <a class="zoom_in" href="#" onclick="setActiveStyleSheet('vision-help'); return false;"><img class="zoom_in" src="images/zoom_in.png"></a>
+            <a class="zoom_out" href="#" onclick="setActiveStyleSheet('light-mode'); return false;"><img class="zoom_out" src="images/zoom_out.png"></a>
+            <a class="voice_help1" href="#" onclick="voice_help1(); return false;"><img class="voice_help1" src="images/voice.png"></a>
+            <a class="voice_help2" href="#" onclick="voice_help2(); return false;"><img class="voice_help2" src="images/voice.png"></a>
 
         </body>
 </html>

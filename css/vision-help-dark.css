@@ -1,5 +1,5 @@
 body {
-  background: #e9f0e8;
+  background: #2e2f31;
   padding: 0%;
   margin: 0%;
 }
@@ -15,12 +15,27 @@ a {
   color: white;
 }
 
+.logo {
+  font-family: 'Lobster', cursive;
+  color: white;
+  text-decoration: none;
+  font-size: 4rem;
+  text-align: center;
+  font-style: italic;
+  margin-left: 0.5em;
+}
+
+.logo span {
+  color: #84a98c;
+}
+
 .welcome-sect {
   font-family: 'Alegreya', serif;
+  color: white;
   margin-left: 1.5em;
   margin-top: 4em;
   margin-bottom: 4em;
-  font-size: 1rem;
+  font-size: 2.5rem;
   font-weight: bold;
   -webkit-animation: welcomeLoad 2s forwards;
           animation: welcomeLoad 2s forwards;
@@ -33,7 +48,7 @@ nav {
   position: fixed;
   right: 0;
   top: 0;
-  background: #52796f;
+  background: #1f1f1f;
   height: 100vh;
   width: 50%;
   z-index: 999;
@@ -53,7 +68,8 @@ nav ul {
 }
 
 nav ul a {
-  color: black;
+  font-size: 3rem;
+  color: white;
   padding: 0.75em 2em;
   display: block;
 }
@@ -89,21 +105,8 @@ header svg {
           transform: translateX(0%);
 }
 
-.logo {
-  font-family: 'Lobster', cursive;
-  color: #2f3e46;
-  text-decoration: none;
-  font-size: 2rem;
-  text-align: center;
-  font-style: italic;
-  margin-left: 0.5em;
-}
-
-.logo span {
-  color: #84a98c;
-}
-
 .intro h2 {
+  color: #cccccc;
   font-family: 'Alegreya', serif;
   margin-left: 2em;
   width: 18rem;
@@ -153,7 +156,8 @@ header svg {
 }
 
 .appointment-text h2 {
-  color: black;
+  font-size: 3rem;
+  color: #cac9c9;
   margin-top: 3em;
 }
 
@@ -164,6 +168,7 @@ footer {
 }
 
 .contact-text {
+  color: #cccccc;
   margin-top: 7em;
   margin-left: 1em;
   margin-bottom: 0.5em;
@@ -204,7 +209,6 @@ footer {
 }
 
 .contacts .second-element h3 {
-  color: black;
   margin: 0;
   width: 15rem;
 }
@@ -218,23 +222,23 @@ footer {
 }
 
 .contacts .third-element h3 {
-  color: black;
   margin: 0;
   width: 15rem;
 }
 
 .aboutus .aboutus-text {
+  color: #cccccc;
   margin-top: 3em;
   margin-left: 1em;
   margin-bottom: 0.5em;
 }
 
-.aboutus .aboutus-content {
+.aboutus-content {
+  color: #cccccc;
   margin-top: 0.5rem;
   margin-bottom: 1rem;
   padding: 0;
   margin-left: 2rem;
-  color: black;
   width: 15rem;
 }
 
@@ -243,39 +247,48 @@ footer {
   margin-top: 3em;
   margin-left: 1em;
   margin-bottom: 0.5em;
-  color: black;
+  color: #cccccc;
 }
 
 .google-maps .mapouter {
   margin-left: 1em;
 }
 
-.zoom_in-light {
+.zoom_out-dark {
   width: 5em;
   margin-left: 1em;
   margin-bottom: 1em;
-}
-
-.zoom_out-light {
-  width: 0%;
 }
 
 .zoom_in-dark {
   width: 0%;
 }
 
-.zoom_out-dark {
+.zoom_out-light {
+  width: 0%;
+}
+
+.zoom_in-light {
   width: 0%;
 }
 
 .voice_help1 {
+  width: 0%;
+}
+
+.voice_help2 {
   width: 5em;
   margin-left: 1em;
   margin-bottom: 1em;
 }
 
-.voice_help2 {
-  width: 0%;
+.eikones {
+  margin-bottom: 8em;
+}
+
+.eikones p {
+  color: #cac9c9;
+  font-size: 3rem;
 }
 
 .eikones img {
@@ -350,7 +363,8 @@ footer {
 
 .list-of-activities ul {
   list-style: disc;
-  font-size: 1.5rem;
+  font-size: 3rem;
+  color: #cac9c9;
 }
 
 .list-of-activities li {
@@ -365,12 +379,14 @@ footer {
 }
 
 .booking_form {
+  font-size: 3rem;
   border-radius: 5px;
-  background-color: #f2f2f2;
+  background-color: #04293A;
   padding: 20px;
 }
 
 input[type=text], select, input[type=date] {
+  font-size: 3rem;
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -383,7 +399,7 @@ input[type=text], select, input[type=date] {
 
 .sbmt_button {
   width: 100%;
-  background-color: #2f3e46;
+  background-color: #064663;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -393,7 +409,8 @@ input[type=text], select, input[type=date] {
 }
 
 .sbmt_button:hover {
-  background-color: #52796f;
+  background-color: #ECB365;
+  color: black;
 }
 
 .confirmation-message {
@@ -403,18 +420,11 @@ input[type=text], select, input[type=date] {
 
 .confirmation-message h2 {
   margin-bottom: 2em;
+  color: #cac9c9;
 }
 
 .confirmation-message a {
-  color: black;
-}
-
-.subscription_form {
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px;
-  margin-left: 2em;
-  margin-right: 2em;
+  color: #cac9c9;
 }
 
 @media only screen and (min-width: 640px) {
@@ -434,10 +444,6 @@ input[type=text], select, input[type=date] {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-  }
-  .subscription_form {
-    margin-left: 5em;
-    margin-right: 5em;
   }
 }
 
@@ -499,6 +505,9 @@ input[type=text], select, input[type=date] {
     width: 35rem;
     margin-left: 15vw;
   }
+  .aboutus .aboutus-text {
+    margin-left: 10em;
+  }
   .aboutus .aboutus-content {
     width: 30rem;
     display: -webkit-box;
@@ -511,10 +520,6 @@ input[type=text], select, input[type=date] {
   .contact-text {
     margin-top: 3em;
     margin-bottom: 2em;
-  }
-  .subscription_form {
-    margin-left: 10em;
-    margin-right: 10em;
   }
 }
 
@@ -564,10 +569,6 @@ input[type=text], select, input[type=date] {
   .intro .intro-images .home-image4 {
     width: 70vw;
     margin-top: -300px;
-  }
-  .subscription_form {
-    margin-left: 15em;
-    margin-right: 15em;
   }
 }
 
@@ -623,10 +624,6 @@ input[type=text], select, input[type=date] {
   footer {
     margin-left: 16vw;
   }
-  .subscription_form {
-    margin-left: 20em;
-    margin-right: 20em;
-  }
 }
 
 @media only screen and (min-width: 1700px) {
@@ -641,10 +638,6 @@ input[type=text], select, input[type=date] {
   }
   .google-maps {
     margin-left: 8em;
-  }
-  .subscription_form {
-    margin-left: 25em;
-    margin-right: 25em;
   }
 }
 
@@ -709,4 +702,4 @@ input[type=text], select, input[type=date] {
             clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
   }
 }
-/*# sourceMappingURL=main.css.map */
+/*# sourceMappingURL=vision-help-dark.css.map */

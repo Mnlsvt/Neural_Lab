@@ -20,7 +20,7 @@ a {
   margin-left: 1.5em;
   margin-top: 4em;
   margin-bottom: 4em;
-  font-size: 1rem;
+  font-size: 2.5rem;
   font-weight: bold;
   -webkit-animation: welcomeLoad 2s forwards;
           animation: welcomeLoad 2s forwards;
@@ -93,7 +93,7 @@ header svg {
   font-family: 'Lobster', cursive;
   color: #2f3e46;
   text-decoration: none;
-  font-size: 2rem;
+  font-size: 4rem;
   text-align: center;
   font-style: italic;
   margin-left: 0.5em;
@@ -250,17 +250,13 @@ footer {
   margin-left: 1em;
 }
 
-.zoom_in-light {
+.zoom_out-light {
   width: 5em;
   margin-left: 1em;
   margin-bottom: 1em;
 }
 
-.zoom_out-light {
-  width: 0%;
-}
-
-.zoom_in-dark {
+.zoom_in-light {
   width: 0%;
 }
 
@@ -268,14 +264,18 @@ footer {
   width: 0%;
 }
 
+.zoom_in-dark {
+  width: 0%;
+}
+
 .voice_help1 {
-  width: 5em;
-  margin-left: 1em;
-  margin-bottom: 1em;
+  width: 0%;
 }
 
 .voice_help2 {
-  width: 0%;
+  width: 5em;
+  margin-left: 1em;
+  margin-bottom: 1em;
 }
 
 .eikones img {
@@ -283,6 +283,10 @@ footer {
   height: 22vh;
   margin-left: 0.5em;
   margin-top: 0.5em;
+}
+
+.eikones p {
+  font-size: 3rem;
 }
 
 .eikona-right {
@@ -350,7 +354,7 @@ footer {
 
 .list-of-activities ul {
   list-style: disc;
-  font-size: 1.5rem;
+  font-size: 3rem;
 }
 
 .list-of-activities li {
@@ -365,12 +369,14 @@ footer {
 }
 
 .booking_form {
+  font-size: 3rem;
   border-radius: 5px;
   background-color: #f2f2f2;
   padding: 20px;
 }
 
 input[type=text], select, input[type=date] {
+  font-size: 3rem;
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -484,7 +490,7 @@ input[type=text], select, input[type=date] {
     color: black;
     padding: 0.5em 0em;
     text-align: center;
-    font-size: 1rem;
+    font-size: 3rem;
   }
   nav ul li:hover {
     background: none;
@@ -498,6 +504,7 @@ input[type=text], select, input[type=date] {
     text-align: center;
     width: 35rem;
     margin-left: 15vw;
+    font-size: 3em;
   }
   .aboutus .aboutus-content {
     width: 30rem;
@@ -618,10 +625,16 @@ input[type=text], select, input[type=date] {
     margin-top: -500px;
   }
   .appointment-text {
-    font-size: 2rem;
+    font-size: 4rem;
   }
   footer {
     margin-left: 16vw;
+  }
+  footer h3 {
+    font-size: 2em;
+  }
+  footer h4 {
+    font-size: 2em;
   }
   .subscription_form {
     margin-left: 20em;
@@ -709,4 +722,4 @@ input[type=text], select, input[type=date] {
             clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
   }
 }
-/*# sourceMappingURL=main.css.map */
+/*# sourceMappingURL=vision-help.css.map */
