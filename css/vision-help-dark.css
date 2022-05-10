@@ -397,7 +397,11 @@ footer h4 {
   padding: 20px;
 }
 
-input[type=text], select, input[type=date] {
+.booking_form label {
+  color: white;
+}
+
+input[type=text], select, input[type=date], input[type=tel], input[type=email], input[type=number] {
   font-size: 3rem;
   width: 100%;
   padding: 12px 20px;
@@ -444,6 +448,10 @@ input[type=text], select, input[type=date] {
   padding: 20px;
   margin-left: 2em;
   margin-right: 2em;
+}
+
+.subscription_form label {
+  color: white;
 }
 
 .subscribe_text {

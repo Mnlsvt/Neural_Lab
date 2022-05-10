@@ -10,6 +10,7 @@
         <link rel="alternate stylesheet" type="text/css" href="css/main.css" title="light-mode" />
 	    <link rel="alternate stylesheet" type="text/css" href="css/main-dark.css" title="dark-mode" />
         <link rel="alternate stylesheet" type="text/css" href="css/vision-help.css" title="vision-help" />
+        <link rel="alternate stylesheet" type="text/css" href="css/vision-help-dark.css" title="vision-help-dark" />
 
         <script type="text/javascript" src="javascript/styleswitcher.js"></script>
         <script type="text/javascript" src="javascript/voice.js"></script>
@@ -61,14 +62,14 @@
             <div class="error">
                 <!-- to do innerhtml and add to the error msg (i dont like alerts)-->
             </div>
-            <div class = "subscription_form">
+            <div class = "subscription_form" onsubmit="return false">
                 <form id="form" action="" onsubmit="validation()"> <!-- validate with JS-->
                     <label for="fullname">Full name</label> <!-- full name, max 50 characters and required field, must not contain special character (only one space)-->
                     <input type="text" id="fullname" name="full_name" placeholder="Your full name.." maxlength="50" required>  
                     <label for="fathername">Father name</label> <!-- first name, max 30 characters and optional field-->
                     <input type="text" id="fathername" name="father_name" placeholder="Your father's name.." maxlength="30">
                     <label for="age">Age</label> <!-- age, must be over 18 (less than 120?)-->
-                    <input type="number" id="age" name="age" placeholder="Your age.." required>
+                    <input type="number" id="age" name="age" min="16" max="120" placeholder="Your age.." required>
                     <label for="telno">Phone number</label> <!-- Phone number, 10 numbers-->
                     <input type="tel" id="telno" name="telno" placeholder="Your phone number..">
                     <label for="emailadd">Email</label> <!-- Email address, max 64 characters, required-->

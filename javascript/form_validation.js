@@ -10,7 +10,7 @@ function validation()
 
     if(fullnameResult == false)
     {
-    alert("Please input your first name and last name separated by a single space and don't use special characters");
+        alert("Please input your first name and last name separated by a single space and don't use special characters");
     }
   
     // var fathername = document.getElementById("fathername")
