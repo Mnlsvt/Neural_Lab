@@ -1,9 +1,10 @@
+//Genikes morfopoihseis pou isxuoun gia ola ta arxeia.
+
 body{
     background: #2e2f31;
     padding: 0%;
     margin: 0%;
 }
-
 
 ul{
     text-decoration: none;
@@ -16,25 +17,9 @@ a{
     color: white;
 }
 
-
-
-.logo{
-    font-family: 'Lobster', cursive;
-    color: white;
-    text-decoration: none;
-    font-size: 4rem;
-    text-align: center;
-    font-style: italic;
-    margin-left: 0.5em;
-
-    span{
-        color: #84a98c;
-    }
-}
-
 .welcome-sect{
-    font-family: 'Alegreya', serif;
     color: white;
+    font-family: 'Alegreya', serif;
     margin-left: 1.5em;
     margin-top: 4em;
     margin-bottom: 4em;
@@ -42,6 +27,7 @@ a{
     font-weight: bold;
     animation: welcomeLoad 2s forwards;
 }
+
 
 nav{
     font-family: 'Alegreya', serif;
@@ -64,7 +50,6 @@ nav{
         margin-top: 8em;
 
         a{
-            font-size: 3rem;
             color: white;
             padding: 0.75em 2em;
             display: block;
@@ -101,10 +86,28 @@ header{
 
 
 
+//Home page - index file
+
+.logo{
+    font-family: 'Lobster', cursive;
+    color: white;
+    text-decoration: none;
+    font-size: 4rem;
+    text-align: center;
+    font-style: italic;
+    //font-weight: bold;
+    margin-left: 0.5em;
+
+    span{
+        color: #84a98c;
+    }
+}
+
+
 .intro{
     h2{
-        font-size: 3em;
         color: rgb(204, 204, 204);
+        font-size: 3em;
         font-family: 'Alegreya', serif;
         margin-left: 2em;
         //margin-bottom: 4em;
@@ -147,15 +150,16 @@ header{
         z-index: 1;
         margin-top: -200px;
     }
+    
 }
 
 .appointment-text{
     
     h2{
-        font-size: 3rem;
-        color: rgb(202, 201, 201);
+        color: rgb(204, 204, 204);
         margin-top: 3em;
     }
+    
 }
 
 footer{
@@ -163,9 +167,11 @@ footer{
     padding: 0;
     margin-top: 4em;
     h3{
+        color: rgb(204, 204, 204);
         font-size: 2em;
     }
     h4{
+        color: rgb(204, 204, 204);
         font-size: 2em;
     }
 }
@@ -192,31 +198,32 @@ footer{
     }
 
     .first-element{
-        //color: rgb(204, 204, 204);
+        
         display: flex;
         h3{
+            color: rgb(204, 204, 204);
             margin: 0;
             width: 15rem;
         }
     }
 
     .second-element{
-        //color: rgb(204, 204, 204);
         display: flex;
         margin-top: 0.5em;
 
         h3{
+            color: rgb(204, 204, 204);
             margin: 0;
             width: 15rem;
         }
     }
 
     .third-element{
-        //color: rgb(204, 204, 204);
         display: flex;
         margin-top: 0.5em;
         margin-bottom: 1em;
         h3{
+            color: rgb(204, 204, 204);
             margin: 0;
             width: 15rem;
         }
@@ -230,24 +237,24 @@ footer{
         margin-left: 1em;
         margin-bottom: 0.5em;
     }
-}
 
-.aboutus-content{
-    color: rgb(204, 204, 204);
-    margin-top: 0.5rem;
-    margin-bottom: 1rem;
-    padding: 0;
-    margin-left: 2rem;
-    width: 15rem;
+    .aboutus-content{
+        margin-top: 0.5rem;
+        margin-bottom: 1rem;
+        padding: 0;
+        margin-left: 2rem;
+        color: rgb(204, 204, 204);
+        width: 15rem;
+    }
 }
 
 .google-maps{
     .find-us-text{
+        color: rgb(204, 204, 204);
         text-align: left;
         margin-top: 3em;
         margin-left: 1em;
         margin-bottom: 0.5em;
-        color: rgb(204, 204, 204);
     }
     .mapouter{
         margin-left: 1em;
@@ -260,50 +267,51 @@ footer{
     }
 }
 
-
 .zoom_out-dark{
     width: 5em;
     margin-left: 1em;
     margin-bottom: 1em;
 }
 
-.zoom_in-dark{
-    width: 0%;
-}
-
-.zoom_out-light{
-    width: 0%;
-}
-
 .zoom_in-light{
     width: 0%;
 }
 
-.voice_help1{
+.zoom_in-dark{
     width: 0%;
 }
 
-.voice_help2{
+.voice_help1_light{
+    width: 0%;
+}
+
+.voice_help2_light{
+    width: 0%;
+}
+
+.voice_help1_dark{
+    width: 0%;
+}
+
+.voice_help2_dark{
     width: 5em;
     margin-left: 1em;
     margin-bottom: 1em;
 }
 
-
 //Services file
 
-.eikones{
-    margin-bottom: 8em;
 
-    p{
-        color: rgb(202, 201, 201);
-        font-size: 3rem;
-    }
+.eikones{
     img{
         width: 50vw;
         height: 22vh;
         margin-left: 0.5em;
         margin-top: 0.5em;
+    }
+    p{
+        color: rgb(204, 204, 204);
+        font-size: 3rem;
     }
 }
 
@@ -337,6 +345,7 @@ footer{
         grid-area: right;
         margin-right: 0.5em;
         margin-left: 0.5em;
+
     }
 }
 
@@ -366,9 +375,9 @@ footer{
 
 .list-of-activities{
     ul{
+        color: rgb(204, 204, 204);
         list-style: disc;
         font-size: 3rem;
-        color: rgb(202, 201, 201);
     }
     li{
         width: 90vw;
@@ -381,10 +390,11 @@ footer{
     }
 }
 
+//appointment file
 .booking_form {
     font-size: 3rem;
     border-radius: 5px;
-    background-color: #04293A;//#f2f2f2;
+    background-color: #04293A;
     padding: 20px;
   }
   
@@ -418,22 +428,42 @@ footer{
 
 
 
-
 //success file
 .confirmation-message{
     h2{
         margin-bottom: 2em;
-        color: rgb(202, 201, 201);
+        color: rgb(204, 204, 204);
     }
     a{
-        color: rgb(202, 201, 201);
+        color: rgb(204, 204, 204);
     }
     text-align: center;
     margin-top: 20vh;
-    
+
 }
 
+
+
+//subscription file
+.subscription_form{
+    border-radius: 5px;
+    //background-color: #f2f2f2;
+    padding: 20px;
+    margin-left: 2em;
+    margin-right: 2em;
+}
+
+.subscribe_text{
+    color: rgb(202, 201, 201);
+}
+
+
+
+
 //responsiveness
+
+//Kathe allagh se auto to sector exei na kanei me tis allages pou ginontai otan allazei to megethos ths othonhs. Auto metrietai se pixels kai 
+//oi allages pou kaname lamvanoun thesh sta 640, 750, 1300 kai 1700 pixels.
 
 @media only screen and (min-width: 640px){
 
@@ -466,8 +496,9 @@ footer{
         display: flex;
     }
 
-    .contacts{
-        //margin-top: 4em;
+    .subscription_form{
+        margin-left: 5em;
+        margin-right: 5em;
     }
 }
 
@@ -524,7 +555,7 @@ footer{
                 color: black;
                 padding: 0.5em 0em;
                 text-align: center;
-                font-size: 1rem;
+                font-size: 3rem;
 
                 &:hover{
                     background: none;
@@ -546,14 +577,10 @@ footer{
             text-align: center;
             width: 35rem;
             margin-left: 15vw;
-            
         }
     }
 
     .aboutus{
-        .aboutus-text{
-            margin-left: 10em;
-        }
 
         .aboutus-content{
             width: 30rem;
@@ -568,6 +595,11 @@ footer{
         margin-top: 3em;
         margin-bottom: 2em;
     }
+
+    .subscription_form{
+        margin-left: 10em;
+        margin-right: 10em;
+    }
 }
 
 
@@ -578,6 +610,7 @@ footer{
             width: 500px;
             height: 300px;
         }
+        
     }
     
     .eikona-right{
@@ -634,6 +667,12 @@ footer{
                 margin-top: -300px;
             }
         }
+        
+    }
+        
+    .subscription_form{
+        margin-left: 15em;
+        margin-right: 15em;
     }
 }
 
@@ -681,6 +720,7 @@ footer{
             text-align: center;
             width: 45rem;
             margin-left: 26vw;
+            
         }
 
         .intro-images{
@@ -702,16 +742,19 @@ footer{
                 width: 65vw;
                 margin-top: -500px;
             }
-        }
-        
+        }   
+    }
+    .appointment-text{
+        font-size: 4rem;
     }
 
-    .appointment-text{
-        font-size: 2rem;
-    }
-    
     footer{
         margin-left: 16vw;
+    }
+
+    .subscription_form{
+        margin-left: 20em;
+        margin-right: 20em;
     }
 }
 
@@ -735,11 +778,17 @@ footer{
     .google-maps{
         margin-left: 8em;
     }
+
+    .subscription_form{
+        margin-left: 25em;
+        margin-right: 25em;
+    }
 }
 
-
 //Animations
+
 @keyframes fadeAnim{
+    //Allazei to opacity apo ena element apo 0% se 100% me orismeno delay kathe fora dhmiourgontas to antitheto effect apo to fade.
     from{
         opacity: 0%;
     }
@@ -750,6 +799,7 @@ footer{
 
 
 @keyframes welcomeLoad{
+    //Kanei ena element na emfanizetai apo ta aristera pros ta deksia me orismeno delay kathe fora dhmiourgontas ena effect kseskepasmatos.
     from{
         clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
     }
@@ -759,6 +809,7 @@ footer{
 }
 
 @keyframes introimages1anim{
+    //Eksafanizei ena element apo deksia pros ta aristera me orismeno delay dhmiourgontas ena effect skepasmatos.
     from{
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
     }

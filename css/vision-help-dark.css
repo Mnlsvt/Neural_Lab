@@ -15,23 +15,9 @@ a {
   color: white;
 }
 
-.logo {
-  font-family: 'Lobster', cursive;
-  color: white;
-  text-decoration: none;
-  font-size: 4rem;
-  text-align: center;
-  font-style: italic;
-  margin-left: 0.5em;
-}
-
-.logo span {
-  color: #84a98c;
-}
-
 .welcome-sect {
-  font-family: 'Alegreya', serif;
   color: white;
+  font-family: 'Alegreya', serif;
   margin-left: 1.5em;
   margin-top: 4em;
   margin-bottom: 4em;
@@ -68,7 +54,6 @@ nav ul {
 }
 
 nav ul a {
-  font-size: 3rem;
   color: white;
   padding: 0.75em 2em;
   display: block;
@@ -105,9 +90,23 @@ header svg {
           transform: translateX(0%);
 }
 
+.logo {
+  font-family: 'Lobster', cursive;
+  color: white;
+  text-decoration: none;
+  font-size: 4rem;
+  text-align: center;
+  font-style: italic;
+  margin-left: 0.5em;
+}
+
+.logo span {
+  color: #84a98c;
+}
+
 .intro h2 {
-  font-size: 3em;
   color: #cccccc;
+  font-size: 3em;
   font-family: 'Alegreya', serif;
   margin-left: 2em;
   width: 18rem;
@@ -157,8 +156,7 @@ header svg {
 }
 
 .appointment-text h2 {
-  font-size: 3rem;
-  color: #cac9c9;
+  color: #cccccc;
   margin-top: 3em;
 }
 
@@ -169,10 +167,12 @@ footer {
 }
 
 footer h3 {
+  color: #cccccc;
   font-size: 2em;
 }
 
 footer h4 {
+  color: #cccccc;
   font-size: 2em;
 }
 
@@ -206,6 +206,7 @@ footer h4 {
 }
 
 .contacts .first-element h3 {
+  color: #cccccc;
   margin: 0;
   width: 15rem;
 }
@@ -218,6 +219,7 @@ footer h4 {
 }
 
 .contacts .second-element h3 {
+  color: #cccccc;
   margin: 0;
   width: 15rem;
 }
@@ -231,6 +233,7 @@ footer h4 {
 }
 
 .contacts .third-element h3 {
+  color: #cccccc;
   margin: 0;
   width: 15rem;
 }
@@ -242,21 +245,21 @@ footer h4 {
   margin-bottom: 0.5em;
 }
 
-.aboutus-content {
-  color: #cccccc;
+.aboutus .aboutus-content {
   margin-top: 0.5rem;
   margin-bottom: 1rem;
   padding: 0;
   margin-left: 2rem;
+  color: #cccccc;
   width: 15rem;
 }
 
 .google-maps .find-us-text {
+  color: #cccccc;
   text-align: left;
   margin-top: 3em;
   margin-left: 1em;
   margin-bottom: 0.5em;
-  color: #cccccc;
 }
 
 .google-maps .mapouter {
@@ -269,35 +272,30 @@ footer h4 {
   margin-bottom: 1em;
 }
 
-.zoom_in-dark {
-  width: 0%;
-}
-
-.zoom_out-light {
-  width: 0%;
-}
-
 .zoom_in-light {
   width: 0%;
 }
 
-.voice_help1 {
+.zoom_in-dark {
   width: 0%;
 }
 
-.voice_help2 {
+.voice_help1_light {
+  width: 0%;
+}
+
+.voice_help2_light {
+  width: 0%;
+}
+
+.voice_help1_dark {
+  width: 0%;
+}
+
+.voice_help2_dark {
   width: 5em;
   margin-left: 1em;
   margin-bottom: 1em;
-}
-
-.eikones {
-  margin-bottom: 8em;
-}
-
-.eikones p {
-  color: #cac9c9;
-  font-size: 3rem;
 }
 
 .eikones img {
@@ -305,6 +303,11 @@ footer h4 {
   height: 22vh;
   margin-left: 0.5em;
   margin-top: 0.5em;
+}
+
+.eikones p {
+  color: #cccccc;
+  font-size: 3rem;
 }
 
 .eikona-right {
@@ -371,9 +374,9 @@ footer h4 {
 }
 
 .list-of-activities ul {
+  color: #cccccc;
   list-style: disc;
   font-size: 3rem;
-  color: #cac9c9;
 }
 
 .list-of-activities li {
@@ -429,10 +432,21 @@ input[type=text], select, input[type=date] {
 
 .confirmation-message h2 {
   margin-bottom: 2em;
-  color: #cac9c9;
+  color: #cccccc;
 }
 
 .confirmation-message a {
+  color: #cccccc;
+}
+
+.subscription_form {
+  border-radius: 5px;
+  padding: 20px;
+  margin-left: 2em;
+  margin-right: 2em;
+}
+
+.subscribe_text {
   color: #cac9c9;
 }
 
@@ -453,6 +467,10 @@ input[type=text], select, input[type=date] {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+  }
+  .subscription_form {
+    margin-left: 5em;
+    margin-right: 5em;
   }
 }
 
@@ -499,7 +517,7 @@ input[type=text], select, input[type=date] {
     color: black;
     padding: 0.5em 0em;
     text-align: center;
-    font-size: 1rem;
+    font-size: 3rem;
   }
   nav ul li:hover {
     background: none;
@@ -514,9 +532,6 @@ input[type=text], select, input[type=date] {
     width: 35rem;
     margin-left: 15vw;
   }
-  .aboutus .aboutus-text {
-    margin-left: 10em;
-  }
   .aboutus .aboutus-content {
     width: 30rem;
     display: -webkit-box;
@@ -529,6 +544,10 @@ input[type=text], select, input[type=date] {
   .contact-text {
     margin-top: 3em;
     margin-bottom: 2em;
+  }
+  .subscription_form {
+    margin-left: 10em;
+    margin-right: 10em;
   }
 }
 
@@ -579,6 +598,10 @@ input[type=text], select, input[type=date] {
     width: 70vw;
     margin-top: -300px;
   }
+  .subscription_form {
+    margin-left: 15em;
+    margin-right: 15em;
+  }
 }
 
 @media only screen and (min-width: 1300px) {
@@ -628,10 +651,14 @@ input[type=text], select, input[type=date] {
     margin-top: -500px;
   }
   .appointment-text {
-    font-size: 2rem;
+    font-size: 4rem;
   }
   footer {
     margin-left: 16vw;
+  }
+  .subscription_form {
+    margin-left: 20em;
+    margin-right: 20em;
   }
 }
 
@@ -647,6 +674,10 @@ input[type=text], select, input[type=date] {
   }
   .google-maps {
     margin-left: 8em;
+  }
+  .subscription_form {
+    margin-left: 25em;
+    margin-right: 25em;
   }
 }
 

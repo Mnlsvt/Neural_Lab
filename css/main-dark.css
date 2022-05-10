@@ -255,31 +255,39 @@ footer {
   margin-left: 1em;
 }
 
-.zoom_in-light {
+.zoom_in-dark {
   width: 5em;
   margin-left: 1em;
   margin-bottom: 1em;
-}
-
-.zoom_out-light {
-  width: 0%;
-}
-
-.zoom_in-dark {
-  width: 0%;
 }
 
 .zoom_out-dark {
   width: 0%;
 }
 
-.voice_help1 {
+.zoom_in-light {
+  width: 0%;
+}
+
+.zoom_out-light {
+  width: 0%;
+}
+
+.voice_help1_dark {
   width: 5em;
   margin-left: 1em;
   margin-bottom: 1em;
 }
 
-.voice_help2 {
+.voice_help2_dark {
+  width: 0%;
+}
+
+.voice_help1_light {
+  width: 0%;
+}
+
+.voice_help2_light {
   width: 0%;
 }
 
@@ -423,7 +431,6 @@ input[type=text], select, input[type=date] {
 
 .subscription_form {
   border-radius: 5px;
-  background-color: #f2f2f2;
   padding: 20px;
   margin-left: 2em;
   margin-right: 2em;
