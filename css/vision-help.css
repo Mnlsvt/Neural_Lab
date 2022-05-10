@@ -1,5 +1,5 @@
 body {
-  background: #2e2f31;
+  background: #e9f0e8;
   padding: 0%;
   margin: 0%;
 }
@@ -16,12 +16,11 @@ a {
 }
 
 .welcome-sect {
-  color: white;
   font-family: 'Alegreya', serif;
   margin-left: 1.5em;
   margin-top: 4em;
   margin-bottom: 4em;
-  font-size: 1rem;
+  font-size: 2.5rem;
   font-weight: bold;
   -webkit-animation: welcomeLoad 2s forwards;
           animation: welcomeLoad 2s forwards;
@@ -34,7 +33,7 @@ nav {
   position: fixed;
   right: 0;
   top: 0;
-  background: #1f1f1f;
+  background: #52796f;
   height: 100vh;
   width: 50%;
   z-index: 999;
@@ -54,7 +53,7 @@ nav ul {
 }
 
 nav ul a {
-  color: white;
+  color: black;
   padding: 0.75em 2em;
   display: block;
 }
@@ -92,9 +91,9 @@ header svg {
 
 .logo {
   font-family: 'Lobster', cursive;
-  color: white;
+  color: #2f3e46;
   text-decoration: none;
-  font-size: 2rem;
+  font-size: 4rem;
   text-align: center;
   font-style: italic;
   margin-left: 0.5em;
@@ -105,7 +104,7 @@ header svg {
 }
 
 .intro h2 {
-  color: #cccccc;
+  font-size: 3em;
   font-family: 'Alegreya', serif;
   margin-left: 2em;
   width: 18rem;
@@ -155,7 +154,7 @@ header svg {
 }
 
 .appointment-text h2 {
-  color: #cccccc;
+  color: black;
   margin-top: 3em;
 }
 
@@ -165,8 +164,15 @@ footer {
   margin-top: 4em;
 }
 
+footer h3 {
+  font-size: 2em;
+}
+
+footer h4 {
+  font-size: 2em;
+}
+
 .contact-text {
-  color: #cccccc;
   margin-top: 7em;
   margin-left: 1em;
   margin-bottom: 0.5em;
@@ -195,7 +201,6 @@ footer {
 }
 
 .contacts .first-element h3 {
-  color: #cccccc;
   margin: 0;
   width: 15rem;
 }
@@ -208,7 +213,7 @@ footer {
 }
 
 .contacts .second-element h3 {
-  color: #cccccc;
+  color: black;
   margin: 0;
   width: 15rem;
 }
@@ -222,73 +227,64 @@ footer {
 }
 
 .contacts .third-element h3 {
-  color: #cccccc;
+  color: black;
   margin: 0;
   width: 15rem;
 }
 
 .aboutus .aboutus-text {
-  color: #cccccc;
   margin-top: 3em;
   margin-left: 1em;
   margin-bottom: 0.5em;
 }
 
 .aboutus .aboutus-content {
-  color: #cccccc;
   margin-top: 0.5rem;
   margin-bottom: 1rem;
   padding: 0;
   margin-left: 2rem;
+  color: black;
   width: 15rem;
 }
 
 .google-maps .find-us-text {
-  color: #cccccc;
   text-align: left;
   margin-top: 3em;
   margin-left: 1em;
   margin-bottom: 0.5em;
+  color: black;
 }
 
 .google-maps .mapouter {
   margin-left: 1em;
 }
 
-.zoom_in-dark {
+.zoom_out-light {
   width: 5em;
   margin-left: 1em;
   margin-bottom: 1em;
-}
-
-.zoom_out-dark {
-  width: 0%;
 }
 
 .zoom_in-light {
   width: 0%;
 }
 
-.zoom_out-light {
+.zoom_out-dark {
   width: 0%;
 }
 
-.voice_help1_dark {
+.zoom_in-dark {
+  width: 0%;
+}
+
+.voice_help1 {
+  width: 0%;
+}
+
+.voice_help2 {
   width: 5em;
   margin-left: 1em;
   margin-bottom: 1em;
-}
-
-.voice_help2_dark {
-  width: 0%;
-}
-
-.voice_help1_light {
-  width: 0%;
-}
-
-.voice_help2_light {
-  width: 0%;
 }
 
 .eikones img {
@@ -299,7 +295,7 @@ footer {
 }
 
 .eikones p {
-  color: #cac9c9;
+  font-size: 3rem;
 }
 
 .eikona-right {
@@ -366,9 +362,8 @@ footer {
 }
 
 .list-of-activities ul {
-  color: #cac9c9;
   list-style: disc;
-  font-size: 1.5rem;
+  font-size: 3rem;
 }
 
 .list-of-activities li {
@@ -383,12 +378,14 @@ footer {
 }
 
 .booking_form {
+  font-size: 3rem;
   border-radius: 5px;
-  background-color: #04293A;
+  background-color: #f2f2f2;
   padding: 20px;
 }
 
 input[type=text], select, input[type=date] {
+  font-size: 3rem;
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -401,7 +398,7 @@ input[type=text], select, input[type=date] {
 
 .sbmt_button {
   width: 100%;
-  background-color: #064663;
+  background-color: #2f3e46;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -411,8 +408,7 @@ input[type=text], select, input[type=date] {
 }
 
 .sbmt_button:hover {
-  background-color: #ECB365;
-  color: black;
+  background-color: #52796f;
 }
 
 .confirmation-message {
@@ -422,22 +418,18 @@ input[type=text], select, input[type=date] {
 
 .confirmation-message h2 {
   margin-bottom: 2em;
-  color: #cac9c9;
 }
 
 .confirmation-message a {
-  color: #cac9c9;
+  color: black;
 }
 
 .subscription_form {
   border-radius: 5px;
+  background-color: #f2f2f2;
   padding: 20px;
   margin-left: 2em;
   margin-right: 2em;
-}
-
-.subscribe_text {
-  color: #cac9c9;
 }
 
 @media only screen and (min-width: 640px) {
@@ -507,7 +499,7 @@ input[type=text], select, input[type=date] {
     color: black;
     padding: 0.5em 0em;
     text-align: center;
-    font-size: 1rem;
+    font-size: 3rem;
   }
   nav ul li:hover {
     background: none;
@@ -641,7 +633,7 @@ input[type=text], select, input[type=date] {
     margin-top: -500px;
   }
   .appointment-text {
-    font-size: 2rem;
+    font-size: 4rem;
   }
   footer {
     margin-left: 16vw;
@@ -732,4 +724,4 @@ input[type=text], select, input[type=date] {
             clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
   }
 }
-/*# sourceMappingURL=main-dark.css.map */
+/*# sourceMappingURL=vision-help.css.map */

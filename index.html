@@ -12,8 +12,12 @@
         <!-- auto einai gia thn allagh ths css-->
         <link rel="alternate stylesheet" type="text/css" href="css/main.css" title="light-mode" />
 	    <link rel="alternate stylesheet" type="text/css" href="css/main-dark.css" title="dark-mode" />
+        <link rel="alternate stylesheet" type="text/css" href="css/vision-help.css" title="vision-help" />
+        <link rel="alternate stylesheet" type="text/css" href="css/vision-help-dark.css" title="vision-help-dark" />
 
         <script type="text/javascript" src="javascript/styleswitcher.js"></script>
+        <script type="text/javascript" src="javascript/voice.js"></script>
+
         
         <title>Neuro Labs.</title>
 
@@ -44,22 +48,20 @@
                     </svg>
 
                     <ul>
+                        <li><a href="index.html">Home</a></li>
                         <li><a href="services.html">Services</a></li>
                         <li><a href="activities.html">Activities</a></li>
                         <li><a href="appointment.html">Book an appointment</a></li>
                         <li><a href="subscription.html">Subscribe</a></li>
-                        <!--
-                            An paththei to koumpi dark mode ginetai redirect se alla panomoitupa html arxeia ta opoia exoun allo styling/theme etsi wste
-                            na einai pio skoteina. Ola auta ta .html arxeia vriskontai ston fakelo "darks" kai to linking metaksu tous allazei apo arxeio
-                            se arxeio. (To koumpi metatrepetai se "Light mode" otan eimaste se dark selida.)
-                        -->
-                        <li><a href="#" onclick="setActiveStyleSheet('dark-mode'); return false;">Dark Mode</a></li>
-                        <li><a href="#" onclick="setActiveStyleSheet('light-mode'); return false;">Light Mode</a></li>
+                        
+                        
+                        <li><a class="dark_mode_button" href="#" onclick="setActiveStyleSheet('dark-mode'); return false;">Dark Mode</a></li>
+                        <li class="light_mode_button"><a href="#" onclick="setActiveStyleSheet('light-mode'); return false;">Light Mode</a></li>
                     </ul>
                 </nav>
 
                 <svg class="menu" viewBox="0 0 48 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M24 32H0V26.6667H24V32ZM48 18.6667H0V13.3333H48V18.6667ZM48 5.33333H24V0H48V5.33333Z" fill="black"/>
+                    <path d="M24 32H0V26.6667H24V32ZM48 18.6667H0V13.3333H48V18.6667ZM48 5.33333H24V0H48V5.33333Z" fill="grey"/>
                 </svg>
     
             </header>
@@ -133,6 +135,9 @@
                         </div>
                     </div>
                 </div>                
+
+                
+                
             </footer>
             
 
@@ -154,10 +159,22 @@
                 close.addEventListener("click", () =>{
                     nav.classList.remove("open-nav")
                 })
+
+                //window.speechSynthesis.speak(new SpeechSynthesisUtterance('ska ta'));
             </script>
 
 
+            <a class="zoom_in-light" href="#" onclick="setActiveStyleSheet('vision-help'); return false;"><img class="zoom_in-light" src="images/zoom_in_light.png"></a>
+            <a class="zoom_out-light" href="#" onclick="setActiveStyleSheet('light-mode'); return false;"><img class="zoom_out-light" src="images/zoom_out_light.png"></a>
 
+            <a class="zoom_in-dark" href="#" onclick="setActiveStyleSheet('vision-help-dark'); return false;"><img class="zoom_in-dark" src="images/zoom_in_dark.png"></a>
+            <a class="zoom_out-dark" href="#" onclick="setActiveStyleSheet('dark-mode'); return false;"><img class="zoom_out-dark" src="images/zoom_out_dark.png"></a>
+
+            <a class="voice_help1_light" href="#" onclick="voice_help1(); return false;"><img class="voice_help1_light" src="images/voice_light.png"></a>
+            <a class="voice_help2_light" href="#" onclick="voice_help2(); return false;"><img class="voice_help2_light" src="images/voice_light.png"></a>
+
+            <a class="voice_help1_dark" href="#" onclick="voice_help1(); return false;"><img class="voice_help1_dark" src="images/voice_dark.png"></a>
+            <a class="voice_help2_dark" href="#" onclick="voice_help2(); return false;"><img class="voice_help2_dark" src="images/voice_dark.png"></a>
 
         </body>
 </html>
