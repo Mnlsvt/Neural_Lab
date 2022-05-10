@@ -32,9 +32,11 @@
                     </svg>
 
                     <ul>
+                        <li><a href="index.html">Home</a></li>
                         <li><a href="services.html">Services</a></li>
                         <li><a href="activities.html">Activities</a></li>
                         <li><a href="appointment.html">Book an appointment</a></li>
+                        <li><a href="subscription.html">Subscribe</a></li>
                         <li><a class="dark_mode_button" href="#" onclick="setActiveStyleSheet('dark-mode'); return false;">Dark Mode</a></li>
                         <li class="light_mode_button"><a href="#" onclick="setActiveStyleSheet('light-mode'); return false;">Light Mode</a></li>
                     </ul>                        
@@ -86,10 +88,14 @@
                 })
             </script>
 
-            <a class="zoom_in" href="#" onclick="setActiveStyleSheet('vision-help'); return false;"><img class="zoom_in" src="images/zoom_in.png"></a>
-            <a class="zoom_out" href="#" onclick="setActiveStyleSheet('light-mode'); return false;"><img class="zoom_out" src="images/zoom_out.png"></a>
-            <a class="voice_help1" href="#" onclick="voice_help1(); return false;"><img class="voice_help1" src="images/voice.png"></a>
-            <a class="voice_help2" href="#" onclick="voice_help2(); return false;"><img class="voice_help2" src="images/voice.png"></a>
+            <a class="zoom_in-light" href="#" onclick="setActiveStyleSheet('vision-help'); return false;"><img class="zoom_in-light" src="images/zoom_in.png"></a>
+            <a class="zoom_out-light" href="#" onclick="setActiveStyleSheet('light-mode'); return false;"><img class="zoom_out-light" src="images/zoom_out.png"></a>
+
+            <a class="zoom_in-dark" href="#" onclick="setActiveStyleSheet('vision-help-dark'); return false;"><img class="zoom_in-dark" src="images/zoom_in.png"></a>
+            <a class="zoom_out-dark" href="#" onclick="setActiveStyleSheet('dark-mode'); return false;"><img class="zoom_out-dark" src="images/zoom_out.png"></a>
+
+            <a href="#" onclick="voice_help1(); return false;"><img class="voice_help1" src="images/voice.png"></a>
+            <a href="#" onclick="voice_help2(); return false;"><img class="voice_help2" src="images/voice.png"></a>
 
         </body>
 </html>
