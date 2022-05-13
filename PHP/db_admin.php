@@ -71,47 +71,62 @@
           </div>
 
           <?php
+
+            if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['createdbconnection']))
+            {
+              connection_creation();
+            }
+
+            if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['createdb']))
+            {
+              database_creation();
+            }
             
+
             function connection_creation()
             {
-            // 1. Get Server Name, Username, Password
-            $servername = "localhost";
-            $username = "root";
-            $password = "";
+              // 1. Get Server Name, Username, Password
+              $servername = "localhost";
+              $username = "root";
+              $password = "";
+              
+
+              // Create connection
+              $conn = mysqli_connect($servername, $username, $password);
+
+
+              // Check connection
+              if (!$conn) {
+                  die("Connection failed: " . mysqli_connect_error());
+              }
+              echo "Connected successfully";
+            }
+
+            function database_creation()
+            {
+              // Create database
+              $sql = "CREATE DATABASE myDBbb1";
+              if ($conn->query($sql) === TRUE) {
+                  echo "Database created successfully";
+              } 
+              else {
+                  echo "Error creating database: " . $conn->error;
+              }
+            }
             
-
-            // Create connection
-            $conn = mysqli_connect($servername, $username, $password);
-
-
-            // Check connection
-            if (!$conn) {
-              die("Connection failed: " . mysqli_connect_error());
-            }
-            echo "Connected successfully";
-            }
 
             // 4. Close the connection
             function close_connection()
             {
-              mysqli_close($conn);
+                mysqli_close($conn);
             }
 
-            function database_creation{
-              // Create database
-              $sql = "CREATE DATABASE myDBbb";
-              if ($conn->query($sql) === TRUE) {
-                echo "Database created successfully";
-              } 
-              else {
-                echo "Error creating database: " . $conn->error;
-              }
-            }
 
-            function delete_database{
+            function delete_database()
+            {
               $sql = "Drop DATABASE myDBbb";
-              if ($mysqli->query("DROP DATABASE myDBbb")) {
-                echo("Database TUTORIALS dropped successfully.<br />");
+              if ($mysqli->query("DROP DATABASE myDBbb1")) {
+                  echo("Database TUTORIALS dropped successfully.<br />");
               }
             }
 
@@ -128,7 +143,16 @@
             //mysqli_close($connection);
           ?>
           
-          <button class="createdb" id="create_button" type="submit" onsubmit="">Create Database</button>
+          
+          <button class="createdb" name="createdb" method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">Create Database</button>
+          <button class="deletedb" name="deletedb" method="post" onclick="delete_database()">Delete Database</button>
+
+          <form action="functioncalling.php">
+            <input type="submit" name="createdb" value="create" onclick="database_creation()" />
+            <input type="submit" name="conenctdb" value="connect" onclick="connection_creation()" />
+          </form>
+
+          
 
 
           <!--
@@ -149,7 +173,7 @@
 
           </script>
 
-
+          <!--
           <a class="zoom_in-light" href="#" onclick="setActiveStyleSheet('vision-help'); return false;"><img class="zoom_in-light" src="images/zoom_in_light.png"></a>
           <a class="zoom_out-light" href="#" onclick="setActiveStyleSheet('light-mode'); return false;"><img class="zoom_out-light" src="images/zoom_out_light.png"></a>
 
@@ -161,7 +185,7 @@
 
           <a class="voice_help1_dark" href="#" onclick="voice_help1(); return false;"><img class="voice_help1_dark" src="images/voice_dark.png"></a>
           <a class="voice_help2_dark" href="#" onclick="voice_help2(); return false;"><img class="voice_help2_dark" src="images/voice_dark.png"></a>
-
+          -->
 
 
 
