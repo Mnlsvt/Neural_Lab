@@ -20,7 +20,7 @@ function check() {
 
     // (C2) FATHER_NAME
     var fathername = document.getElementById("fathername").value;
-    var fathernameRGEX = /^[a-zA-Z]+$/;
+    var fathernameRGEX = /^[a-zA-Z]+\S$/;
     var fathernameResult = fathernameRGEX.test(fathername);
 
     field = document.getElementById("fathername");
@@ -28,7 +28,7 @@ function check() {
     if (fathernameResult == false && fathername != "") {
         valid = false;
         field.classList.add("err");
-        error.innerHTML = "Please fill in your name with a space between the first and the last name (Don't use characters like !@#$%^& etc)\r\n";
+        error.innerHTML = "Please fill in your father's first name only (Don't use characters like !@#$%^& etc)\r\n";
     } else {
         field.classList.remove("err");
         error.innerHTML = "";
@@ -52,7 +52,7 @@ function check() {
     if (!field.checkValidity()) {
         valid = false;
         field.classList.add("err");
-        error.innerHTML = "Phone number must be 10 characters.\r\n";
+        error.innerHTML = "Phone number must be 10 digits.\r\n";
     } else {
         field.classList.remove("err");
         error.innerHTML = "";
@@ -64,19 +64,23 @@ function check() {
     if (!field.checkValidity()) {
         valid = false;
         field.classList.add("err");
-        error.innerHTML = "Email must be less than 64 characters.\r\n";
+        error.innerHTML = "Email must be less than 64 characters and in proper email format (localname@domain).\r\n";
     } else {
         field.classList.remove("err");
         error.innerHTML = "";
     }
 
     // (C3) AFM
+    var taxno = document.getElementById("taxno").value;
+    var taxnoRGEX = /^\d{9}$/;
+    var taxnoResult = taxnoRGEX.test(taxno);
+
     field = document.getElementById("taxno");
     error = document.getElementById("ctaxno");
-    if (!field.checkValidity()) {
+    if (taxnoResult == false) {
         valid = false;
         field.classList.add("err");
-        error.innerHTML = "Tax number(AFM) must be 9 characters.\r\n";
+        error.innerHTML = "Tax number(AFM) must be 9 digits (0-9).\r\n";
     } else {
         field.classList.remove("err");
         error.innerHTML = "";
@@ -84,15 +88,15 @@ function check() {
 
     // (C3) AMKA
     var amka = document.getElementById("securityno").value;
-    var amkaRGEX = /^[0-9]*$/;                                 // <-- please fix this expression :(
+    var amkaRGEX = /^\d{11}$/;                                 // <-- please fix this expression :(
     var amkaResult = amkaRGEX.test(amka);
 
     field = document.getElementById("securityno");
     error = document.getElementById("csecurityno");
-    if ((amkaResult == false && amka != "") || amka != 11) {
+    if ((amkaResult == false && amka != "")) {
         valid = false;
         field.classList.add("err");
-        error.innerHTML = "Security number must be 11 characters.\r\n";
+        error.innerHTML = "Security number must be 11 digits (0-9).\r\n";
     } else {
         field.classList.remove("err");
         error.innerHTML = "";
@@ -100,12 +104,12 @@ function check() {
 
     // (C3) CARD-NUMBER
     var cardno = document.getElementById("cardno").value;
-    var cardnoRGEX = /^[0-9]*$/;                                 // <-- please fix this expression :(
+    var cardnoRGEX = /^\d{16}*$/;                                 // <-- please fix this expression :(
     var cardnoResult = cardnoRGEX.test(cardno);
 
     field = document.getElementById("cardno");
     error = document.getElementById("ccardno");
-    if ((cardnoResult == false && cardno != "") || cardno != 11) {
+    if ((cardnoResult == false)) {
         valid = false;
         field.classList.add("err");
         error.innerHTML = "Card number must be 16 characters.\r\n";
@@ -115,6 +119,7 @@ function check() {
     }
 
     // (C2) CARDHOLDER'S-ADDRESS
+    // alfarithmitiko!
     var cardholder = document.getElementById("cardholder").value;
     var cardholderRGEX = /^[a-zA-Z]+$/;
     var cardholderResult = cardholderRGEX.test(cardholder);
