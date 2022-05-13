@@ -40,7 +40,7 @@ function check() {
     if (!field.checkValidity()) {
         valid = false;
         field.classList.add("err");
-        error.innerHTML = "To subscribe to our lab you have to be over 16 years old.\r\n";
+        error.innerHTML = "To subscribe to our lab you have to be over 18 years old.\r\n";
     } else {
         field.classList.remove("err");
         error.innerHTML = "";
