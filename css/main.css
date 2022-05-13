@@ -425,6 +425,41 @@ input[type=text], select, input[type=date], input[type=tel], input[type=email], 
   margin-right: 2em;
 }
 
+.subscription_form span {
+  color: red;
+}
+
+.err {
+  background: #ffe6ee;
+  border: 1px solid #b1395f;
+}
+
+.emsg {
+  color: #c12020;
+  font-weight: bold;
+}
+
+.subscribe_text_star {
+  color: red;
+}
+
+.comments_field {
+  height: 100px;
+  resize: none;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 @media only screen and (min-width: 640px) {
   .eikona-left .content {
     width: 20rem;

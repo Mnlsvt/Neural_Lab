@@ -445,6 +445,7 @@ input[type=text], select, input[type=date], input[type=tel], input[type=email], 
 
 .subscription_form {
   border-radius: 5px;
+  background-color: #04293A;
   padding: 20px;
   margin-left: 2em;
   margin-right: 2em;
@@ -452,6 +453,41 @@ input[type=text], select, input[type=date], input[type=tel], input[type=email], 
 
 .subscription_form label {
   color: white;
+}
+
+.subscription_form span {
+  color: red;
+}
+
+.err {
+  background: #ffe6ee;
+  border: 1px solid #b1395f;
+}
+
+.emsg {
+  color: #c12020;
+  font-weight: bold;
+}
+
+.subscribe_text_star {
+  color: red;
+}
+
+.comments_field {
+  height: 100px;
+  resize: none;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }
 
 .subscribe_text {
