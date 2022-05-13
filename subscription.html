@@ -89,11 +89,12 @@
                     <div id="ctaxno" class="emsg"></div>
                     
                     <label for="securityno">Social Security number</label>
-                    <input type="text" id="securityno" name="securityno" minlenght="11" maxlength="11" placeholder="Your social security number (AMKA).."> 
+                    <input type="text" id="securityno" name="securityno" maxlength="11" placeholder="Your social security number (AMKA).."> 
                     <div id="csecurityno" class="emsg"></div>
 
                     <label for="cardno">Credit card number<span>*</span></label>
-                    <input type="text" id="cardno" name="cardno" placeholder="Your credit card number.." min="16" max="16" required> 
+                    <input id="cardno" type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="19" placeholder="xxxx xxxx xxxx xxxx">
+                    <!-- <input type="text" id="cardno" name="cardno" placeholder="Your credit card number.." min="16" max="16" required>  -->
                     <div id="ccardno" class="emsg"></div>
 
                     <label for="cardno">Credit card expiration date<span>*</span></label> 
