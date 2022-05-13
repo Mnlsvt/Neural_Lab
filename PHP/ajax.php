@@ -1,5 +1,5 @@
 <?php
-    if (isset($_POST['action'])) {
+    /*if (isset($_POST['action'])) {
         switch ($_POST['action']) {
             case 'createdb':
                 database_creation();
@@ -38,5 +38,5 @@
         else {
             echo "Error creating database: " . $conn->error;
         }
-    }
+    }*/
 ?>

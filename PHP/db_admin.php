@@ -71,22 +71,80 @@
           </div>
 
           <?php
-            /*
-            Class Connection{
+           
+           
+            
 
-                public function __construct(){
-                try{
-                    //define database details
-                    $data = DB_TYPE.":host=".DB_HOST.";dbname=".DB_NAME.";";
-                    //new PDO object: database details, username, password
-                global $db = new PDO($data,DB_USER,DB_PASS);
-                    show('CONNECTED!');
-                    //show($db); //$db is now a new PDO object
-                }catch(PDOException $e){
-                    die($e->getMessage());
+           function database_creation()
+           {
+                // Creating the connection
+                // 1. Get Server Name, Username, Password
+                global $servername;
+                global $username;
+                global $password;
+
+                $servername = "localhost";
+                $username = "root";
+                $password = "";
+                
+
+                // Create connection 
+                $conn = mysqli_connect($servername, $username, $password);
+
+
+                // Check connection
+                if (!$conn) {
+                    die("Connection failed: " . mysqli_connect_error());
                 }
-                }//close constructor
-            */
+                echo "Connected successfully";
+
+                // Create database
+                $sql = "CREATE DATABASE myDBbb1";
+                if ($conn->query($sql) === TRUE) {
+                    echo "Database created successfully";
+                } 
+                else {
+                    echo "Error creating database: " . $conn->error;
+                }
+
+                // Terminating the connection
+                mysqli_close();
+           }
+
+           function database_deletion()
+           {
+                // Creating the connection
+                // 1. Get Server Name, Username, Password
+                global $servername;
+                global $username;
+                global $password;
+
+                $servername = "localhost";
+                $username = "root";
+                $password = "";
+                
+
+                // Create connection 
+                $conn = mysqli_connect($servername, $username, $password);
+
+
+                // Check connection
+                if (!$conn) {
+                    die("Connection failed: " . mysqli_connect_error());
+                }
+                echo "Connected successfully";
+
+
+                $sql = 'Drop DATABASE myDBbb1';
+                $retval = mysqli_query($sql, $conn);
+                if ($retval) {
+                    echo("Database myDbb1 dropped successfully.<br />");
+                }
+
+                // Terminating the connection
+                mysqli_close();
+            }
+
 
 
 
@@ -110,51 +168,19 @@
             // To close the connection
             //mysqli_close($connection);
 
+                //if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['connectdb']))
+                //{
+                //    connection_creation();
+                //}
+            
                 if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['createdb']))
                 {
-                    // Create database
-                    global $conn;
-                    global $sql;
-                    $sql = "CREATE DATABASE myDBbb1";
-                    if ($conn->query($sql) === TRUE) {
-                        echo "Database created successfully";
-                    } 
-                    else {
-                        echo "Error creating database: " . $conn->error;
-                    }
+                    database_creation();
                 }
-
-                if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['connectdb']))
-                {
-                    // 1. Get Server Name, Username, Password
-                    global $servername;
-                    global $username;
-                    global $password;
-
-                    $servername = "localhost";
-                    $username = "root";
-                    $password = "";
-                    
-
-                    // Create connection 
-                    global $conn;
-                    $conn = mysqli_connect($servername, $username, $password);
-
-
-                    // Check connection
-                    if (!$conn) {
-                        die("Connection failed: " . mysqli_connect_error());
-                    }
-                    echo "Connected successfully";
-                    }
 
                 if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['deletedb']))
                 {
-                    global $sql;
-                    $sql = "Drop DATABASE myDBbb";
-                    if ($mysqli->query("DROP DATABASE myDBbb1")) {
-                        echo("Database myDbb1 dropped successfully.<br />");
-              }
+                    database_deletion();
                 }
           ?>
           
@@ -193,9 +219,10 @@
               })
 
 
+                
 
 
-
+              // den to akoumpame!!!!!!!!!
                 $(document).ready(function(){
                     $('.buttondb').click(function(){
                         var clickBtnValue = $(this).val();
@@ -207,6 +234,7 @@
                         });
                     });
                 });
+            
 
           </script>
 
