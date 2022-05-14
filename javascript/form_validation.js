@@ -1,4 +1,4 @@
-function check() {
+function check(event) {
     // (C1) INIT
     var valid = true, error = "", field = "";
 
@@ -13,6 +13,7 @@ function check() {
         valid = false;
         field.classList.add("err");
         error.innerHTML = "Please fill in your name with a space between the first and the last name (Don't use characters like !@#$%^& etc)\r\n";
+        event.preventDefault();
     } else {
         field.classList.remove("err");
         error.innerHTML = "";
@@ -29,6 +30,7 @@ function check() {
         valid = false;
         field.classList.add("err");
         error.innerHTML = "Please fill in your father's first name only (Don't use characters like !@#$%^& etc)\r\n";
+        event.preventDefault();
     } else {
         field.classList.remove("err");
         error.innerHTML = "";
@@ -41,6 +43,7 @@ function check() {
         valid = false;
         field.classList.add("err");
         error.innerHTML = "To subscribe to our lab you have to be over 18 years old.\r\n";
+        event.preventDefault();
     } else {
         field.classList.remove("err");
         error.innerHTML = "";
@@ -53,6 +56,7 @@ function check() {
         valid = false;
         field.classList.add("err");
         error.innerHTML = "Phone number must be 10 digits.\r\n";
+        event.preventDefault();
     } else {
         field.classList.remove("err");
         error.innerHTML = "";
@@ -65,6 +69,7 @@ function check() {
         valid = false;
         field.classList.add("err");
         error.innerHTML = "Email must be less than 64 characters and in proper email format (localname@domain).\r\n";
+        event.preventDefault();
     } else {
         field.classList.remove("err");
         error.innerHTML = "";
@@ -81,6 +86,7 @@ function check() {
         valid = false;
         field.classList.add("err");
         error.innerHTML = "Tax number(AFM) must be 9 digits (0-9).\r\n";
+        event.preventDefault();
     } else {
         field.classList.remove("err");
         error.innerHTML = "";
@@ -88,7 +94,7 @@ function check() {
 
     // (C3) AMKA
     var amka = document.getElementById("securityno").value;
-    var amkaRGEX = /^\d{11}$/;                                 // <-- please fix this expression :(
+    var amkaRGEX = /^\d{11}$/;                                
     var amkaResult = amkaRGEX.test(amka);
 
     field = document.getElementById("securityno");
@@ -97,6 +103,7 @@ function check() {
         valid = false;
         field.classList.add("err");
         error.innerHTML = "Security number must be 11 digits (0-9).\r\n";
+        event.preventDefault();
     } else {
         field.classList.remove("err");
         error.innerHTML = "";
@@ -104,7 +111,7 @@ function check() {
 
     // (C3) CARD-NUMBER
     var cardno = document.getElementById("cardno").value;
-    var cardnoRGEX = /^\d{16}*$/;                                 // <-- please fix this expression :(
+    var cardnoRGEX = /^\d{16}$/;                                 
     var cardnoResult = cardnoRGEX.test(cardno);
 
     field = document.getElementById("cardno");
@@ -113,6 +120,7 @@ function check() {
         valid = false;
         field.classList.add("err");
         error.innerHTML = "Card number must be 16 characters.\r\n";
+        event.preventDefault();
     } else {
         field.classList.remove("err");
         error.innerHTML = "";
@@ -130,6 +138,7 @@ function check() {
         valid = false;
         field.classList.add("err");
         error.innerHTML = "This field cannot be blank. (Don't use characters like !@#$%^& etc)\r\n";
+        event.preventDefault();
     } else {
         field.classList.remove("err");
         error.innerHTML = "";
@@ -142,22 +151,9 @@ function check() {
         valid = false;
         field.classList.add("err");
         error.innerHTML = "Leave a comment that is less than 250 characters.\r\n";
+        event.preventDefault();
     } else {
         field.classList.remove("err");
         error.innerHTML = "";
     }
-}
-
-
-function db_check(){
-    message = document.getElementById("dbcreated");
-    //if (message == "dbcreated")
-    //{
-        message.innerHTML = "Database created!!!";
-    //}
-    //else
-    //{
-        message.innerHTML = "Database deleted!!!";
-    //}
-    
 }

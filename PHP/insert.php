@@ -52,7 +52,7 @@
                       <li><a href="../services.html">Services</a></li>
                       <li><a href="../activities.html">Activities</a></li>
                       <li><a href="../appointment.html">Book an appointment</a></li>
-                      <li><a href="../subscription.html">Subscribe</a></li>
+                      <li><a href="subscription.php">Subscribe</a></li>
                       
                       
                       <li><a class="dark_mode_button" href="#" onclick="setActiveStyleSheet('dark-mode'); return false;">Dark Mode</a></li>
@@ -68,45 +68,52 @@
     <body>
         <center>
             <?php
-    
-            $servername => localhost
-            $username => root
-            $password => empty
-            // database name => staff
-            $conn = mysqli_connect($servername, $username, $password);
-            
-            // Check connection
-            if($conn === false){
-                die("ERROR: Could not connect. " 
-                    . mysqli_connect_error());
-            }
-            
-            // Taking all 5 values from the form data(input)
-            $first_name =  $_REQUEST['first_name'];
-            $last_name = $_REQUEST['last_name'];
-            $gender =  $_REQUEST['gender'];
-            $address = $_REQUEST['address'];
-            $email = $_REQUEST['email'];
-            
-            // Performing insert query execution
-            // here our table name is college
-            $sql = "INSERT INTO college  VALUES ('$first_name', 
-                '$last_name','$gender','$address','$email')";
-            
-            if(mysqli_query($conn, $sql)){
-                echo "<h3>data stored in a database successfully." 
-                    . " Please browse your localhost php my admin" 
-                    . " to view the updated data</h3>"; 
-    
-                echo nl2br("\n$first_name\n $last_name\n "
-                    . "$gender\n $address\n $email");
-            } else{
-                echo "ERROR: Hush! Sorry $sql. " 
-                    . mysqli_error($conn);
-            }
-            
-            // Close connection
-            mysqli_close($conn);
+        
+                $servername = "localhost";
+                $username = "root";
+                $password = "";
+                // database name => RESDB
+                $conn = mysqli_connect($servername, $username, $password);
+                
+                // Check connection
+                if($conn === false){
+                    die("ERROR: Could not connect. " 
+                        . mysqli_connect_error());
+                }
+
+                $conn->query("USE RESDB");
+                
+                // Taking all 5 values from the form data(input)
+                $fullname =  $_REQUEST['fullname'];
+                $fathername = $_REQUEST['fathername'];
+                $age =  $_REQUEST['age'];
+                $telno = $_REQUEST['telno'];
+                $emailadd = $_REQUEST['emailadd'];
+                $taxno = $_REQUEST['taxno'];
+                $securityno = $_REQUEST['securityno'];
+                $cardno = $_REQUEST['cardno'];
+                $cardexp = $_REQUEST['cardexp'];
+                $cardholder = $_REQUEST['cardholder'];
+                $comments = $_REQUEST['comments'];
+                
+                // Performing insert query execution
+                // here our table name is college
+                $sql = "INSERT INTO CLIENTS VALUES ('$fullname','$fathername','$age','$telno','$emailadd','$taxno','$securityno','$cardno','$cardexp','$cardholder','$comments')";
+                
+                if(mysqli_query($conn, $sql)){
+                    echo "<h3>data stored in a database successfully." 
+                        . " Please browse your localhost php my admin" 
+                        . " to view the updated data</h3>"; 
+        
+                    echo nl2br("\n$fullname\n $fathername\n "
+                        . "$age\n $telno\n $emailadd\n $taxno\n $securityno\n $cardno\n $cardexp\n $cardholder\n $comments");
+                } else{
+                    echo "ERROR: Hush! Sorry $sql. " 
+                        . mysqli_error($conn);
+                }
+                
+                // Close connection
+                mysqli_close($conn);
             ?>
         </center>
     </body>
