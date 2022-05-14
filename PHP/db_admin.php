@@ -78,9 +78,23 @@
             </form>
 
             <form class="db_forms" action="db_admin.php" method="post">
+                <center><button class="db_buttons" style="margin-bottom: 3em; color:white; width: 70%; background-color: #2f3e46; padding: 14px 20px; margin: 8px 0; border: none; border-radius: 4px; cursor: pointer;" type="submit" name="createtable">Create Table</button></center>
+                <div id="ccreatetable" class="emsg"></div>
+            </form>
+
+            <form class="db_forms" action="db_admin.php" method="post">
+                <center><button class="db_buttons" style="margin-bottom: 3em; color:white; width: 70%; background-color: #2f3e46; padding: 14px 20px; margin: 8px 0; border: none; border-radius: 4px; cursor: pointer;" type="submit" name="deletetable">Delete Table</button></center>
+                <div id="ccdeletetable" class="emsg"></div>
+            </form>
+
+            <form class="db_forms" action="db_admin.php" method="post">
                 <center><button class="db_buttons" style="margin-bottom: 3em; color:white; width: 70%; background-color: #2f3e46; padding: 14px 20px; margin: 8px 0; border: none; border-radius: 4px; cursor: pointer;" type="submit" name="deletedb">Delete Database</button></center>
                 <div id="dbdeleted" class="emsg"></div>
             </form>
+
+            
+
+            
 
             <!-- The form for searching members -->
             <div class="welcome-sect">
@@ -158,13 +172,88 @@
                 $sql = "CREATE DATABASE IF NOT EXISTS RESDB"; // checkarei an den uparxei h vash kai th dhmiourgei (to idio kanei kai me to table apo katw)
                 if ($conn->query($sql) === TRUE) {
                     $conn->query("USE RESDB");                    
-                    $conn->query("CREATE TABLE IF NOT EXISTS CLIENTS(FULLNAME VARCHAR(255), FATHERNAME VARCHAR(255), AGE INT, PHONE INT, EMAIL VARCHAR(255), AFM VARCHAR(255), AMKA VARCHAR(255),  
-                    CARDNO VARCHAR(255), CARDEXP VARCHAR(255), CARDHOLDADDRESS VARCHAR(255), COMM VARCHAR(255))");
+                    //$conn->query("CREATE TABLE IF NOT EXISTS CLIENTS(FULLNAME VARCHAR(255), FATHERNAME VARCHAR(255), AGE INT, PHONE INT, EMAIL VARCHAR(255), AFM VARCHAR(255), AMKA VARCHAR(255),  
+                    //CARDNO VARCHAR(255), CARDEXP VARCHAR(255), CARDHOLDADDRESS VARCHAR(255), COMM VARCHAR(255))");
                     
                     echo "Database created successfully";
                 } 
                 else {
                     echo "Error creating database: " . $conn->error;
+                }
+            }
+
+            function create_table(){
+                
+                // Creating the connection
+                // 1. Get Server Name, Username, Password
+                $servername;
+                $username;
+                $password;
+
+                $servername = "localhost";
+                $username = "root";
+                $password = "";
+                
+
+                // Create connection 
+                $conn = mysqli_connect($servername, $username, $password);
+
+
+                // Check connection
+                if (!$conn) {
+                    die("Connection failed: " . mysqli_connect_error());
+                }
+                
+                //echo "Connected successfully";
+                
+                //Create Table Clients
+                $conn->query("USE RESDB");
+                $sql = "CREATE TABLE IF NOT EXISTS CLIENTS(FULLNAME VARCHAR(255), FATHERNAME VARCHAR(255), AGE INT, PHONE INT, EMAIL VARCHAR(255), AFM VARCHAR(255), AMKA VARCHAR(255),  
+                CARDNO VARCHAR(255), CARDEXP VARCHAR(255), CARDHOLDADDRESS VARCHAR(255), COMM VARCHAR(255))";
+                if ($conn->query($sql) === TRUE) {
+                    $conn->query("USE RESDB");                    
+
+                    echo "Table created successfully";
+                } 
+                else {
+                    echo "Error creating table: " . $conn->error;
+                }
+            }
+
+            function delete_table(){
+                
+                // Creating the connection
+                // 1. Get Server Name, Username, Password
+                $servername;
+                $username;
+                $password;
+
+                $servername = "localhost";
+                $username = "root";
+                $password = "";
+                
+
+                // Create connection 
+                $conn = mysqli_connect($servername, $username, $password);
+
+
+                // Check connection
+                if (!$conn) {
+                    die("Connection failed: " . mysqli_connect_error());
+                }
+                
+                //echo "Connected successfully";
+                
+                //Delete Table Clients
+                $conn->query("USE RESDB");
+                $sql = "DROP TABLE IF EXISTS CLIENTS";
+                if ($conn->query($sql) === TRUE) {
+                    $conn->query("USE RESDB");                    
+
+                    echo "Table deleted successfully";
+                } 
+                else {
+                    echo "Error deleting table: " . $conn->error;
                 }
             }
 
@@ -212,6 +301,16 @@
                 if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['deletedb']))
                 {
                     database_deletion();
+                }
+
+                if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['createtable']))
+                {
+                    create_table();
+                }
+
+                if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['deletetable']))
+                {
+                    delete_table();
                 }
           ?>
           
