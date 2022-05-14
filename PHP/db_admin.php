@@ -53,7 +53,7 @@
                       <li><a href="../services.html">Services</a></li>
                       <li><a href="../activities.html">Activities</a></li>
                       <li><a href="../appointment.html">Book an appointment</a></li>
-                      <li><a href="../subscription.html">Subscribe</a></li>
+                      <li><a href="subscription.php">Subscribe</a></li>
                       
                       
                       <li><a class="dark_mode_button" href="#" onclick="setActiveStyleSheet('dark-mode'); return false;">Dark Mode</a></li>
@@ -109,11 +109,12 @@
                 //echo "Connected successfully";
                 
                 // Create database
-                $sql = "CREATE DATABASE IF NOT EXISTS Subscription_Database"; // checkarei an den uparxei h vash kai th dhmiourgei (to idio kanei kai me to table apo katw)
+                $sql = "CREATE DATABASE IF NOT EXISTS RESDB"; // checkarei an den uparxei h vash kai th dhmiourgei (to idio kanei kai me to table apo katw)
                 if ($conn->query($sql) === TRUE) {
-                    $conn->query("USE Subscription_Database");
-                    $conn->query("CREATE TABLE IF NOT EXISTS CLIENTS(FULLNAME VARCHAR(255), FATHERNAME VARCHAR(255), AGE INT, PHONE INT, EMAIL VARCHAR(255), AMKA VARCHAR(255), AFM VARCHAR(255), 
-                    CARDNO VARCHAR(255), CARDEXP VARCHAR(255), COMM VARCHAR(255))");
+                    $conn->query("USE RESDB");                    
+                    $conn->query("CREATE TABLE IF NOT EXISTS CLIENTS(FULLNAME VARCHAR(255), FATHERNAME VARCHAR(255), AGE INT, PHONE INT, EMAIL VARCHAR(255), AFM VARCHAR(255), AMKA VARCHAR(255),  
+                    CARDNO VARCHAR(255), CARDEXP VARCHAR(255), CARDHOLDADDRESS VARCHAR(255), COMM VARCHAR(255))");
+                    
                     echo "Database created successfully";
                 } 
                 else {
@@ -146,7 +147,7 @@
 
                 
                 // sql to delete a database
-                $sql = "DROP DATABASE IF EXISTS Subscription_Database"; // an uparxei tote th svhnei alliws den kanei tipota
+                $sql = "DROP DATABASE IF EXISTS RESDB"; // an uparxei tote th svhnei alliws den kanei tipota
 
                 if (mysqli_query($conn, $sql)) {
                     echo "Database deleted successfully";
