@@ -81,6 +81,52 @@
                 <center><button class="db_buttons" style="margin-bottom: 3em; color:white; width: 70%; background-color: #2f3e46; padding: 14px 20px; margin: 8px 0; border: none; border-radius: 4px; cursor: pointer;" type="submit" name="deletedb">Delete Database</button></center>
                 <div id="dbdeleted" class="emsg"></div>
             </form>
+
+            <!-- The form for searching members -->
+            <div class="welcome-sect">
+              <h1>Search in Subscribers.</h1>
+          </div>
+
+            <div class = "search_form" onsubmit="return false">
+                <form id="form" action="" onsubmit="" > <!-- kati allo pou tha psaxnei oxi validate-->
+                    <label for="fullname">Full name<span></span></label> <!-- full name, max 50 characters and required field, must not contain special character (only one space)-->
+                    <input type="text" id="fullname" name="fullname" placeholder="Full name.." minlength="5" maxlength="50" required>  
+                    
+                    <label for="fathername">Father name</label> <!-- first name, max 30 characters and optional field-->
+                    <input type="text" id="fathername" name="fathername" placeholder="Father's name.." maxlength="30">
+                    
+                    <label for="age">Age<span></span></label> <!-- age, must be over 18 (less than 120?)-->
+                    <input type="number" id="age" name="age" min="18" max="120" placeholder="Your age.." required>
+
+                    <label for="telno">Phone number</label> <!-- Phone number, 10 numbers-->
+                    <input type="tel" id="telno" name="telno" minlength="10" maxlength="10" placeholder="Phone number..">
+
+                    <label for="emailadd">Email<span></span></label> <!-- Email address, max 64 characters, required-->
+                    <input type="email" id="emailadd" name="emailadd" placeholder="Email address.." maxlength="64" required>
+
+                    <label for="taxno">Tax number<span></span></label> <!-- Tax number, 9 numbers, required-->
+                    <input type="text" id="taxno" name="taxno" placeholder="Tax number (AFM).." maxlength="9" required>
+                    
+                    <label for="securityno">Social Security number</label>
+                    <input type="text" id="securityno" name="securityno" maxlength="11" placeholder="Social security number (AMKA).."> 
+
+                    <label for="cardno">Credit card number<span></span></label>
+                    <input type="text" id="cardno" name="cardno" placeholder="Credit card number" maxlength="16" required>
+
+                    <label for="cardno">Credit card expiration date<span></span></label> 
+                    <input type="date" id="cardexp" name="cardexp" placeholder="Credit card expiration date.." min='1899-01-01' max='2023-12-31' required> 
+
+                    <label for="cardno">Cardholder's address<span></span></label> 
+                    <input type="text" id="cardholder" name="cardholder" placeholder="Credit card number.." required> 
+
+                    <label for="comments">Leave a comment</label> 
+                    <input class="comments_field" type="text" id="comments" name="comments" placeholder="What's on your mind.." maxlength="250"> 
+
+                    <button class="clear_button" id="clear_button" type="reset">Reset</button>
+
+                    <button class="sbmt_button" id="submit_button" type="submit">Submit</button>
+                </form>
+            </div>
           
           <?php
            
