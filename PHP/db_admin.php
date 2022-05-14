@@ -11,7 +11,7 @@
       
       <!-- auto einai gia thn allagh ths css-->
       <link rel="alternate stylesheet" type="text/css" href="../css/main.css" title="light-mode" />
-    <link rel="alternate stylesheet" type="text/css" href="../css/main-dark.css" title="dark-mode" />
+      <link rel="alternate stylesheet" type="text/css" href="../css/main-dark.css" title="dark-mode" />
       <link rel="alternate stylesheet" type="text/css" href="../css/vision-help.css" title="vision-help" />
       <link rel="alternate stylesheet" type="text/css" href="../css/vision-help-dark.css" title="vision-help-dark" />
 
@@ -28,6 +28,7 @@
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,700;1,500&family=Noto+Serif+Display:ital,wght@1,500&display=swap" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+      <script defer src="javascript/form_validation.js"></script>
       
       <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">  
     </head>
@@ -70,18 +71,26 @@
               <h1>Database administratrion.</h1>
           </div>
 
+          <!-- Gia kapoio logo den mporousa na ta sundesw me th css opote ta egrapsa mesa sto style -->
+            <form class="db_forms" action="db_admin.php" method="post">
+                <center><button class="db_buttons" style="margin-bottom: 3em; color:white; width: 70%; background-color: #2f3e46; padding: 14px 20px; margin: 8px 0; border: none; border-radius: 4px; cursor: pointer;" type="submit" name="createdb">Create Database</button></center>
+                <div id="dbcreated" class="emsg"></div>
+            </form>
+
+            <form class="db_forms" action="db_admin.php" method="post">
+                <center><button class="db_buttons" style="margin-bottom: 3em; color:white; width: 70%; background-color: #2f3e46; padding: 14px 20px; margin: 8px 0; border: none; border-radius: 4px; cursor: pointer;" type="submit" name="deletedb">Delete Database</button></center>
+                <div id="dbdeleted" class="emsg"></div>
+            </form>
+          
           <?php
            
-           
-            
-
            function database_creation()
            {
                 // Creating the connection
                 // 1. Get Server Name, Username, Password
-                global $servername;
-                global $username;
-                global $password;
+                $servername;
+                $username;
+                $password;
 
                 $servername = "localhost";
                 $username = "root";
@@ -96,20 +105,21 @@
                 if (!$conn) {
                     die("Connection failed: " . mysqli_connect_error());
                 }
-                echo "Connected successfully";
-
+                
+                //echo "Connected successfully";
+                
                 // Create database
-                $sql = "CREATE DATABASE myDBbb1";
+                $sql = "CREATE DATABASE IF NOT EXISTS Subscription_Database"; // checkarei an den uparxei h vash kai th dhmiourgei (to idio kanei kai me to table apo katw)
                 if ($conn->query($sql) === TRUE) {
+                    $conn->query("USE Subscription_Database");
+                    $conn->query("CREATE TABLE IF NOT EXISTS CLIENTS(FULLNAME VARCHAR(255), FATHERNAME VARCHAR(255), AGE INT, PHONE INT, EMAIL VARCHAR(255), AMKA VARCHAR(255), AFM VARCHAR(255), 
+                    CARDNO VARCHAR(255), CARDEXP VARCHAR(255), COMM VARCHAR(255))");
                     echo "Database created successfully";
                 } 
                 else {
                     echo "Error creating database: " . $conn->error;
                 }
-
-                // Terminating the connection
-                mysqli_close();
-           }
+            }
 
            function database_deletion()
            {
@@ -123,7 +133,7 @@
                 $username = "root";
                 $password = "";
                 
-
+                
                 // Create connection 
                 $conn = mysqli_connect($servername, $username, $password);
 
@@ -132,47 +142,21 @@
                 if (!$conn) {
                     die("Connection failed: " . mysqli_connect_error());
                 }
-                echo "Connected successfully";
+                //echo "Connected successfully";
 
+                
+                // sql to delete a database
+                $sql = "DROP DATABASE IF EXISTS Subscription_Database"; // an uparxei tote th svhnei alliws den kanei tipota
 
-                $sql = 'Drop DATABASE myDBbb1';
-                $retval = mysqli_query($sql, $conn);
-                if ($retval) {
-                    echo("Database myDbb1 dropped successfully.<br />");
+                if (mysqli_query($conn, $sql)) {
+                    echo "Database deleted successfully";
+                } else {
+                    echo "Error deleting database: " . mysqli_error($conn);
                 }
-
-                // Terminating the connection
-                mysqli_close();
             }
 
 
 
-
-
-
-            // 4. Close the connection
-            function close_connection()
-            {
-                mysqli_close();
-            }
-
-
-
-            // To check if the database is created
-            // mysqli_query($connection, $query)
-
-
-            // To create the connection
-            //$connection = mysqli_connect($server_name, $user_name, $password);
-
-            // To close the connection
-            //mysqli_close($connection);
-
-                //if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['connectdb']))
-                //{
-                //    connection_creation();
-                //}
-            
                 if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['createdb']))
                 {
                     database_creation();
@@ -186,19 +170,7 @@
           
           
           
-
-
-          <form action="db_admin.php" method="post">
-            <input type="submit" name="deletedb" value="Delete Database"/>
-          </form>
-
-          <form action="db_admin.php" method="post">
-            <input type="submit" name="connectdb" value="Connect to the Database"/>
-          </form>
           
-          <form action="db_admin.php" method="post">
-            <input type="submit" name="createdb" value="Create Database"/>
-          </form>
           
 
 
@@ -218,8 +190,16 @@
                   nav.classList.remove("open-nav")
               })
 
-
-                
+              // mia idea gia ena pop up window pou tha rwtaei an o xrhsths thelei ontws na svhsei th vash
+              function areYouSure() {
+                var txt;
+                if (confirm("Are you sure that you want to delete the database?")) {
+                    txt = "You pressed OK!";
+                } else {
+                    txt = "You pressed Cancel!";
+                }
+                document.getElementById("demo").innerHTML = txt;
+}
 
 
               // den to akoumpame!!!!!!!!!
