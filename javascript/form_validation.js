@@ -40,7 +40,7 @@ function check() {
     if (!field.checkValidity()) {
         valid = false;
         field.classList.add("err");
-        error.innerHTML = "To subscribe to our lab you have to be over 16 years old.\r\n";
+        error.innerHTML = "To subscribe to our lab you have to be over 18 years old.\r\n";
     } else {
         field.classList.remove("err");
         error.innerHTML = "";
@@ -149,33 +149,15 @@ function check() {
 }
 
 
-
-
-/*function validation()
-{   
+function db_check(){
+    message = document.getElementById("dbcreated");
+    //if (message == "dbcreated")
+    //{
+        message.innerHTML = "Database created!!!";
+    //}
+    //else
+    //{
+        message.innerHTML = "Database deleted!!!";
+    //}
     
-    var form = document.getElementById("form")
-
-    // Full name one space between, no special chars
-    var fullname = document.getElementById("fullname").value;
-    var fullnameRGEX = /^[a-zA-Z]+\s[a-zA-Z]+$/;
-    var fullnameResult = fullnameRGEX.test(fullname);
-
-    if(fullnameResult == false)
-    {
-        alert("Please input your first name and last name separated by a single space and don't use special characters");
-        error.innerHTML = "Name must be 2-4 characters\r\n";
-    }
-  
-    // var fathername = document.getElementById("fathername")
-    // var age = document.getElementById("age")
-    // var phone = document.getElementById("telno")
-    // var email = document.getElementById("emailadd")
-    // var taxno = document.getElementById("taxno")
-    // var securityno = document.getElementById("securityno")
-
-    
-
 }
-
-*/
