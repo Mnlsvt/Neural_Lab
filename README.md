@@ -1,6 +1,6 @@
 To do
 
-- [ ] Form for search (same as for subscription) (na ksekinisw twra sto ergasthrio?)
+- [x] Form for search (same as for subscription) (na ksekinisw twra sto ergasthrio?)
 
 - [ ] Make the subscription form feed the DB (INSERT (exw kanei ena draft kai nomizw oti den eimai too far from that))
 
