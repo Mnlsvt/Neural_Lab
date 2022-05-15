@@ -104,7 +104,7 @@
                     <div id="ccardexp" class="emsg"></div>
 
                     <label for="cardholder">Cardholder's address<span>*</span></label> 
-                    <input type="text" id="cardholder" name="cardholder" placeholder="Credit card holder's name.." required> 
+                    <input type="text" id="cardholder" name="cardholder" placeholder="Credit card holder's address.." required> 
                     <div id="ccardholder" class="emsg"></div>
 
                     <label for="comments">Leave a comment</label> 
