@@ -29,7 +29,7 @@
       <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,700;1,500&family=Noto+Serif+Display:ital,wght@1,500&display=swap" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
       
-      <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">  
+      <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">  
     </head>
       <body>
           <header>
@@ -84,29 +84,21 @@
                 $conn->query("USE RESDB");
                 
                 // Taking all 5 values from the form data(input)
-                $fullname =  $_REQUEST['fullname'];
-                $fathername = $_REQUEST['fathername'];
-                $age =  $_REQUEST['age'];
-                $telno = $_REQUEST['telno'];
-                $emailadd = $_REQUEST['emailadd'];
-                $taxno = $_REQUEST['taxno'];
-                $securityno = $_REQUEST['securityno'];
-                $cardno = $_REQUEST['cardno'];
-                $cardexp = $_REQUEST['cardexp'];
-                $cardholder = $_REQUEST['cardholder'];
-                $comments = $_REQUEST['comments'];
+                $fullname =  $_REQUEST['fullnamesearch'];
+                $age =  $_REQUEST['agesearch'];
+                $taxno = $_REQUEST['taxnosearch'];
+                $comments = $_REQUEST['commentssearch'];
                 
-                // Performing insert query execution
-                // here our table name is college
-                $sql = "SELECT * FROM CLIENTS WHERE (fullname = '$fullname' OR fullname = NULL, fathername = '$fathername' OR fathername = NULL, age = '$age' OR age = NULL, telno = '$telno' OR telno = NULL, emailadd = '$emailadd' OR emailadd = NULL, taxno = '$taxno' OR taxno = NULL, securityno = '$securityno' OR securityno = NULL, cardno = '$cardno' OR cardno = NULL, cardexp = '$cardexp' OR cardexp = NULL, cardholder = '$cardholder' OR cardholder = NULL, comments = '$comments' OR comments = NULL;)";
+                // Performing select query execution
+                // here our table name is clients
+                $sql = "SELECT * FROM CLIENTS WHERE (AFM = '$taxno' AND FULLNAME LIKE '%$fullname%' AND AGE = '$age' AND COMM LIKE '%$comments%')";
                 
                 if(mysqli_query($conn, $sql)){
                     echo "<h3>data stored in a database successfully." 
                         . " Please browse your localhost php my admin" 
                         . " to view the updated data</h3>"; 
-        
-                    echo nl2br("\n$fullname\n $fathername\n "
-                        . "$age\n $telno\n $emailadd\n $taxno\n $securityno\n $cardno\n $cardexp\n $cardholder\n $comments");
+                        //$sql2 = "SHOW FULLNAME, FATHERNAME, AGE, PHONE, EMAIL, AFM, AMKA, CARDNO, CARDEXP";
+                        //$conn->query($sql2);
                 } else{
                     echo "ERROR: Hush! Sorry $sql. " 
                         . mysqli_error($conn);
