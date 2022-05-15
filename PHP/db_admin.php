@@ -107,14 +107,14 @@
           </div>
 
             <form id="form" action="search.php" onsubmit="" method="post"> <!-- kati allo pou tha psaxnei oxi validate-->
-                <label for="fullname">Full name<span></span></label> <!-- full name, max 50 characters and required field, must not contain special character (only one space)-->
+                <label for="fullname">Full name</label> <!-- full name, max 50 characters and required field, must not contain special character (only one space)-->
                 <input type="text" id="fullnamesearch" name="fullnamesearch" placeholder="Full name..">  
                 
-                <label for="age">Age<span>*</span></label> <!-- age, must be over 18 (less than 120?)-->
-                <input type="number" id="agesearch" name="agesearch" placeholder="Your age.." required>
+                <label for="age">Age</label> <!-- age, must be over 18 (less than 120?)-->
+                <input type="number" id="agesearch" name="agesearch" placeholder="Your age..">
 
-                <label for="taxno">Tax number<span>*</span></label> <!-- Tax number, 9 numbers, required-->
-                <input type="text" id="taxnosearch" name="taxnosearch" placeholder="Tax number (AFM).." maxlength="9" required>
+                <label for="taxno">Tax number</label> <!-- Tax number, 9 numbers, required-->
+                <input type="text" id="taxnosearch" name="taxnosearch" placeholder="Tax number (AFM).." maxlength="9">
 
                 <label for="comments">Leave a comment</label> 
                 <input class="comments_field" type="text" id="commentssearch" name="commentssearch" placeholder="What's on your mind.."> 
@@ -186,7 +186,7 @@
                 
                 //Create Table Clients
                 $conn->query("USE RESDB");
-                $sql = "CREATE TABLE IF NOT EXISTS CLIENTS(FULLNAME VARCHAR(255), FATHERNAME VARCHAR(255), AGE INT, PHONE INT, EMAIL VARCHAR(255), AFM VARCHAR(255), AMKA VARCHAR(255),  
+                $sql = "CREATE TABLE IF NOT EXISTS CLIENTS(FULLNAME VARCHAR(255), FATHERNAME VARCHAR(255), AGE INT, PHONE INT, EMAIL VARCHAR(255), AFM VARCHAR(255) PRIMARY KEY, AMKA VARCHAR(255),  
                 CARDNO VARCHAR(255), CARDEXP VARCHAR(255), CARDHOLDADDRESS VARCHAR(255), COMM VARCHAR(255))";
                 if ($conn->query($sql) === TRUE) {
                     echo "Table created successfully";

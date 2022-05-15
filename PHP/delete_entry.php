@@ -63,117 +63,42 @@
               <svg class="menu" viewBox="0 0 48 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M24 32H0V26.6667H24V32ZM48 18.6667H0V13.3333H48V18.6667ZM48 5.33333H24V0H48V5.33333Z" fill="grey"/>
               </svg>
-  
           </header>
-    <body>
-        <center>
-            <?php
-        
-                $servername = "localhost";
-                $username = "root";
-                $password = "";
-                // database name => RESDB
-                $conn = mysqli_connect($servername, $username, $password);
-                
-                // Check connection
-                if($conn === false){
-                    die("ERROR: Could not connect. " 
-                        . mysqli_connect_error());
-                }
-
-                $conn->query("USE RESDB");
-                
-                // Taking all 5 values from the form data(input)
-                $fullname =  $_REQUEST['fullnamesearch'];
-                $age =  $_REQUEST['agesearch'];
-                $taxno = $_REQUEST['taxnosearch'];
-                $comments = $_REQUEST['commentssearch'];
-
-                //echo "auto einai to fullname   $fullname";
-
-                // Performing select query execution
-                // here our table name is clients
-                $combs = array(1, 1, 1, 1);
-
-                $sql = "SELECT * FROM CLIENTS WHERE ";
-                $k = 0;
-                
-                if ($fullname != "")
-                {
-                    if ($k == 0){
-                        $k = 1;
-                        $sql .= "FULLNAME LIKE '%$fullname%' ";
-                    }
-                    else
-                    {
-                        $sql .= "AND FULLNAME LIKE '%$fullname%' ";
-                    }
-                }
-                if ($taxno != "")
-                {
-                    if ($k == 0){
-                        $k = 1;
-                        $sql .= "AFM = '$taxno' ";
-                    }
-                    else
-                    {
-                        $sql .= "AND AFM = '$taxno' ";
-                    }
-                }
-                if ($age != "")
-                {
-                    if ($k == 0){
-                        $k = 1;
-                        $sql .= "AGE = '$age' ";
-                    }
-                    else
-                    {
-                        $sql .= "AND AGE = '$age' ";
-                    }
-                }
-                if ($comments != "")
-                {
-                    if ($k == 0){
-                        $k = 1;
-                        $sql .= "COMMENTS LIKE '%$comments%' ";
-                    }
-                    else
-                    {
-                        $sql .= "AND COMMENTS LIKE '%$comments%' ";
-                    }
-                }
-
-                if(mysqli_query($conn, $sql)){
-                    $result = $conn->query($sql);
-                    echo nl2br("<h2>Here are the resutls of your search.\r\n" 
-                        . " If nothing shows up, the registration that you are looking for does not exist in the database</h2>\r\n\r\n");
+            <center>
+                <?php
+            
+                    $servername = "localhost";
+                    $username = "root";
+                    $password = "";
+                    // database name => RESDB
+                    $conn = mysqli_connect($servername, $username, $password);
                     
-                    foreach($result as $row) {
-                        echo nl2br("<h2>Fullname:</h2>\n<h3>" . $row['FULLNAME'] . "</h3>\r\n\r\n" . "<h2>Fathername:</h2>\n<h3>" . $row['FATHERNAME'] . "</h3>\r\n\r\n" . "<h2>Age:</h2>\n<h3>" . $row['AGE'] . 
-                        "</h3>\r\n\r\n" . "<h2>Phone number:</h2>\n<h3>" . $row['PHONE'] . "</h3>\r\n\r\n" . "<h2>Email:</h2>\n<h3>" . $row['EMAIL'] . "</h3>\r\n\r\n" . "<h2>Tax number(AFM):</h2>\n<h3>" . $row['AFM'] . "</h3>\r\n\r\n" .
-                        "<h2>Social Security number (AMKA):</h2>\n<h3>" . $row['AMKA'] . "</h3>\r\n\r\n" . "<h2>Credit card number:</h2>\n<h3>" . $row['CARDNO'] . "</h3>\r\n\r\n" . "<h2>Credit card expiration date:</h2>\n<h3>" . $row['CARDEXP'] . "</h3>\r\n\r\n" .
-                        "<h2>Cardholder's address:</h2>\n<h3>" . $row['CARDHOLDADDRESS'] . "</h3>\r\n\r\n" . "<h2>Comments:</h2>\n<h3>" . $row['COMM'] . "</h3>\r\n\r\n");
-                    }    
-                } else{
-                    echo "ERROR: Hush! Sorry $sql. " 
-                        . mysqli_error($conn);
-                }
-                
-                
-                if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['deleteentry']))
-                {
-                    $conn->query("DELETE FROM CLIENTS WHERE AFM = '$taxno_delete' AND FULLNAME LIKE '%$fullname_delete%' AND AGE = '$age_delete' AND COMM LIKE '%$comments_delete%'");
-                }
+                    // Check connection
+                    if($conn === false){
+                        die("ERROR: Could not connect. " 
+                            . mysqli_connect_error());
+                    }
 
-                // Close connection
-                mysqli_close($conn);
-            ?>
+                    $conn->query("USE RESDB");
+                    
+                    // Taking all 5 values from the form data(input)
+                    $fullname_delete =  $_REQUEST['fullnamesearch'];
+                    $age_delete =  $_REQUEST['agesearch'];
+                    $taxno_delete = $_REQUEST['taxnosearch'];
+                    $comments_delete = $_REQUEST['commentssearch'];
+                                                
+                    if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['deleteentry']))
+                    {
+                        $conn->query("DELETE FROM CLIENTS WHERE AFM = '$taxno_delete' AND FULLNAME LIKE '%$fullname_delete%' AND AGE = '$age_delete' AND COMM LIKE '%$comments_delete%'");
+                    }
+
+                    // Close connection
+                    mysqli_close($conn);
+                ?>
+            
+            <h3>Entries deleted successfully.</h3>
             </center>
 
-            <form class="db_forms" action="delete_entry.php" method="post">
-                <center><button class="db_buttons" style="margin-bottom: 3em; color:white; width: 70%; background-color: #2f3e46; padding: 14px 20px; margin: 8px 0; border: none; border-radius: 4px; cursor: pointer;" type="submit" name="deleteentry">Delete entries</button></center>
-                <div id="cdeleteentry" class="emsg"></div>
-            </form>
         
     </body>
     
