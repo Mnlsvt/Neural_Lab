@@ -128,7 +128,7 @@ function check(event) {
 
     // (C2) CARDHOLDER'S-ADDRESS
     var cardholder = document.getElementById("cardholder").value;
-    var cardholderRGEX = /^[a-zA-Z]+\s\d$/;         // alfarithmitiko!
+    var cardholderRGEX = /[0-9A-Za-z ]/;         // alfarithmitiko!
     var cardholderResult = cardholderRGEX.test(cardholder);
 
     field = document.getElementById("cardholder");

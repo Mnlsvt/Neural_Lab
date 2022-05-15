@@ -102,7 +102,7 @@
                 
                 if(mysqli_query($conn, $sql)){
                     echo "<h3>Success!" 
-                        . " Your are now subscribed to our lab</h3>"; 
+                        . " You are now subscribed to our lab</h3>"; 
         
                     echo nl2br("\n$fullname\n $fathername\n "
                         . "$age\n $telno\n $emailadd\n $taxno\n $securityno\n $cardno\n $cardexp\n $cardholder\n $comments");
