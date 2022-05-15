@@ -111,10 +111,10 @@
                 <input type="text" id="fullnamesearch" name="fullnamesearch" placeholder="Full name..">  
                 
                 <label for="age">Age<span>*</span></label> <!-- age, must be over 18 (less than 120?)-->
-                <input type="number" id="agesearch" name="agesearch" placeholder="Your age..">
+                <input type="number" id="agesearch" name="agesearch" placeholder="Your age.." required>
 
                 <label for="taxno">Tax number<span>*</span></label> <!-- Tax number, 9 numbers, required-->
-                <input type="text" id="taxnosearch" name="taxnosearch" placeholder="Tax number (AFM)..">
+                <input type="text" id="taxnosearch" name="taxnosearch" placeholder="Tax number (AFM).." maxlength="9" required>
 
                 <label for="comments">Leave a comment</label> 
                 <input class="comments_field" type="text" id="commentssearch" name="commentssearch" placeholder="What's on your mind.."> 
