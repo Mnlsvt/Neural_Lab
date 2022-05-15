@@ -58,12 +58,14 @@
                 <h1>Become a member of our team.</h1>
             </div>
 
-            <!-- form for subscribing -->
+            <!-- Odhgies gia ton xrhsth -->
             <center>
-            <h2 class="subscribe_text">Subscribe to our lab.</h2>
-            <h4 class="subscribe_text_star" id="subscribe_text_star">Fields with * are required.</h4></center>
+                <h2 class="subscribe_text">Subscribe to our lab.</h2>
+                <h4 class="subscribe_text" id="subscribe_text_star">Please use Latin characters only.</h4>
+                <h4 class="subscribe_text_star" id="subscribe_text_star">Fields with * are required.</h4>
+            </center>
 
-            <div class = "subscription_form" >
+            <div class = "subscription_form">  <!-- H forma ths eggrafhs...merikoi elegxoi ginontai se auth thn html alla elegxetai meta mesw javascript me thn klhsh ths checkValidity() -->
                 <form id="form" action="insert.php" onsubmit="check(event)" novalidate method="post" onsubmit="return false"> <!-- validate with JS-->
                     <label for="fullname">Full name<span>*</span></label> <!-- full name, max 50 characters and required field, must not contain special character (only one space)-->
                     <input type="text" id="fullname" name="fullname" placeholder="Your full name.." minlength="5" maxlength="50" required>  
@@ -89,15 +91,15 @@
                     <input type="text" id="taxno" name="taxno" placeholder="Your tax number (AFM).." maxlength="9" required>
                     <div id="ctaxno" class="emsg"></div>
                     
-                    <label for="securityno">Social Security number</label>
+                    <label for="securityno">Social Security number</label> <!-- AMKA, 11 numbers, required-->
                     <input type="text" id="securityno" name="securityno" maxlength="11" placeholder="Your social security number (AMKA).."> 
                     <div id="csecurityno" class="emsg"></div>
 
-                    <label for="cardno">Credit card number<span>*</span></label>
+                    <label for="cardno">Credit card number<span>*</span></label> <!-- Credit card number, 16 numbers, required-->
                     <input type="text" id="cardno" name="cardno" placeholder="XXXX XXXX XXXX XXXX" maxlength="16" required>
                     <div id="ccardno" class="emsg"></div>
 
-                    <label for="cardexp">Credit card expiration date<span>*</span></label> 
+                    <label for="cardexp">Credit card expiration date<span>*</span></label>  <!-- Credit card expiration date-->
                     <input type="date" id="cardexp" name="cardexp" placeholder="Your credit card expiration date.." min='1899-01-01' max='2023-12-31' required> 
                     <div id="ccardexp" class="emsg"></div>
 
