@@ -41,6 +41,7 @@
                         <li><a href="../activities.html">Activities</a></li>
                         <li><a href="../appointment.html">Book an appointment</a></li>
                         <li><a href="subscription.php">Subscribe</a></li>
+                        <li><a href="db_admin.php">Admin</a></li>
                         <li><a class="dark_mode_button" href="#" onclick="setActiveStyleSheet('dark-mode'); return false;">Dark Mode</a></li>
                         <li class="light_mode_button"><a href="#" onclick="setActiveStyleSheet('light-mode'); return false;">Light Mode</a></li>
                     </ul>                        

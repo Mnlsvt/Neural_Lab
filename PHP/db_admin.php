@@ -30,7 +30,7 @@
       <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
       <script defer src="javascript/form_validation.js"></script>
       
-      <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">  
+      <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">  
     </head>
       <body>
           <header>
@@ -106,46 +106,23 @@
               <h1>Search in Subscribers.</h1>
           </div>
 
-            <div class = "search_form" onsubmit="return false">
-                <form id="form" action="search.php" onsubmit="" method="post"> <!-- kati allo pou tha psaxnei oxi validate-->
-                    <label for="fullname">Full name<span></span></label> <!-- full name, max 50 characters and required field, must not contain special character (only one space)-->
-                    <input type="text" id="fullname" name="fullname" placeholder="Full name.." minlength="5" maxlength="50">  
-                    
-                    <label for="fathername">Father name</label> <!-- first name, max 30 characters and optional field-->
-                    <input type="text" id="fathername" name="fathername" placeholder="Father's name.." maxlength="30">
-                    
-                    <label for="age">Age<span></span></label> <!-- age, must be over 18 (less than 120?)-->
-                    <input type="number" id="age" name="age" min="18" max="120" placeholder="Your age..">
+            <form id="form" action="search.php" onsubmit="" method="post"> <!-- kati allo pou tha psaxnei oxi validate-->
+                <label for="fullname">Full name<span></span></label> <!-- full name, max 50 characters and required field, must not contain special character (only one space)-->
+                <input type="text" id="fullnamesearch" name="fullnamesearch" placeholder="Full name..">  
+                
+                <label for="age">Age<span>*</span></label> <!-- age, must be over 18 (less than 120?)-->
+                <input type="number" id="agesearch" name="agesearch" placeholder="Your age.." required>
 
-                    <label for="telno">Phone number</label> <!-- Phone number, 10 numbers-->
-                    <input type="tel" id="telno" name="telno" minlength="10" maxlength="10" placeholder="Phone number..">
+                <label for="taxno">Tax number<span>*</span></label> <!-- Tax number, 9 numbers, required-->
+                <input type="text" id="taxnosearch" name="taxnosearch" placeholder="Tax number (AFM).." maxlength="9" required>
 
-                    <label for="emailadd">Email<span></span></label> <!-- Email address, max 64 characters, required-->
-                    <input type="email" id="emailadd" name="emailadd" placeholder="Email address.." maxlength="64">
+                <label for="comments">Leave a comment</label> 
+                <input class="comments_field" type="text" id="commentssearch" name="commentssearch" placeholder="What's on your mind.."> 
 
-                    <label for="taxno">Tax number<span></span></label> <!-- Tax number, 9 numbers, required-->
-                    <input type="text" id="taxno" name="taxno" placeholder="Tax number (AFM).." maxlength="9">
-                    
-                    <label for="securityno">Social Security number</label>
-                    <input type="text" id="securityno" name="securityno" maxlength="11" placeholder="Social security number (AMKA).."> 
+                <button class="clear_button" id="clear_buttonsearch" type="reset">Reset</button>
 
-                    <label for="cardno">Credit card number<span></span></label>
-                    <input type="text" id="cardno" name="cardno" placeholder="Credit card number" maxlength="16">
-
-                    <label for="cardno">Credit card expiration date<span></span></label> 
-                    <input type="date" id="cardexp" name="cardexp" placeholder="Credit card expiration date.." min='1899-01-01' max='2023-12-31'> 
-
-                    <label for="cardno">Cardholder's address<span></span></label> 
-                    <input type="text" id="cardholder" name="cardholder" placeholder="Credit card number.."> 
-
-                    <label for="comments">Leave a comment</label> 
-                    <input class="comments_field" type="text" id="comments" name="comments" placeholder="What's on your mind.." maxlength="250"> 
-
-                    <button class="clear_button" id="clear_button" type="reset">Reset</button>
-
-                    <button class="sbmt_button" id="submit_button" type="submit">Search</button>
-                </form>
-            </div>
+                <button class="sbmt_button" id="submit_buttonsearch" type="submit">Search</button>
+            </form>
           
           <?php
            
@@ -176,10 +153,6 @@
                 // Create database
                 $sql = "CREATE DATABASE IF NOT EXISTS RESDB"; // checkarei an den uparxei h vash kai th dhmiourgei (to idio kanei kai me to table apo katw)
                 if ($conn->query($sql) === TRUE) {
-                    $conn->query("USE RESDB");                    
-                    //$conn->query("CREATE TABLE IF NOT EXISTS CLIENTS(FULLNAME VARCHAR(255), FATHERNAME VARCHAR(255), AGE INT, PHONE INT, EMAIL VARCHAR(255), AFM VARCHAR(255), AMKA VARCHAR(255),  
-                    //CARDNO VARCHAR(255), CARDEXP VARCHAR(255), CARDHOLDADDRESS VARCHAR(255), COMM VARCHAR(255))");
-                    
                     echo "Database created successfully";
                 } 
                 else {

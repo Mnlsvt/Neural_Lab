@@ -29,7 +29,7 @@
       <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,700;1,500&family=Noto+Serif+Display:ital,wght@1,500&display=swap" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
       
-      <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">  
+      <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">  
     </head>
       <body>
           <header>
@@ -97,18 +97,17 @@
                 $comments = $_REQUEST['comments'];
                 
                 // Performing insert query execution
-                // here our table name is college
+                // here our table name is clients
                 $sql = "INSERT INTO CLIENTS VALUES ('$fullname','$fathername','$age','$telno','$emailadd','$taxno','$securityno','$cardno','$cardexp','$cardholder','$comments')";
                 
                 if(mysqli_query($conn, $sql)){
-                    echo "<h3>data stored in a database successfully." 
-                        . " Please browse your localhost php my admin" 
-                        . " to view the updated data</h3>"; 
+                    echo "<h3>Success!" 
+                        . " Your are now subscribed to our lab</h3>"; 
         
                     echo nl2br("\n$fullname\n $fathername\n "
                         . "$age\n $telno\n $emailadd\n $taxno\n $securityno\n $cardno\n $cardexp\n $cardholder\n $comments");
                 } else{
-                    echo "ERROR: Hush! Sorry $sql. " 
+                    echo "Oops: Something went wrong...Please try again later. " 
                         . mysqli_error($conn);
                 }
                 

@@ -29,7 +29,7 @@
       <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,700;1,500&family=Noto+Serif+Display:ital,wght@1,500&display=swap" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
       
-      <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">  
+      <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">  
     </head>
       <body>
           <header>
@@ -84,29 +84,26 @@
                 $conn->query("USE RESDB");
                 
                 // Taking all 5 values from the form data(input)
-                $fullname =  $_REQUEST['fullname'];
-                $fathername = $_REQUEST['fathername'];
-                $age =  $_REQUEST['age'];
-                $telno = $_REQUEST['telno'];
-                $emailadd = $_REQUEST['emailadd'];
-                $taxno = $_REQUEST['taxno'];
-                $securityno = $_REQUEST['securityno'];
-                $cardno = $_REQUEST['cardno'];
-                $cardexp = $_REQUEST['cardexp'];
-                $cardholder = $_REQUEST['cardholder'];
-                $comments = $_REQUEST['comments'];
+                $fullname =  $_REQUEST['fullnamesearch'];
+                $age =  $_REQUEST['agesearch'];
+                $taxno = $_REQUEST['taxnosearch'];
+                $comments = $_REQUEST['commentssearch'];
                 
-                // Performing insert query execution
-                // here our table name is college
-                $sql = "SELECT * FROM CLIENTS WHERE (fullname = '$fullname' OR fullname = NULL, fathername = '$fathername' OR fathername = NULL, age = '$age' OR age = NULL, telno = '$telno' OR telno = NULL, emailadd = '$emailadd' OR emailadd = NULL, taxno = '$taxno' OR taxno = NULL, securityno = '$securityno' OR securityno = NULL, cardno = '$cardno' OR cardno = NULL, cardexp = '$cardexp' OR cardexp = NULL, cardholder = '$cardholder' OR cardholder = NULL, comments = '$comments' OR comments = NULL;)";
+                // Performing select query execution
+                // here our table name is clients
+                $sql = "SELECT * FROM CLIENTS WHERE AFM = '$taxno' AND FULLNAME LIKE '%$fullname%' AND AGE = '$age' AND COMM LIKE '%$comments%'";
                 
                 if(mysqli_query($conn, $sql)){
-                    echo "<h3>data stored in a database successfully." 
-                        . " Please browse your localhost php my admin" 
-                        . " to view the updated data</h3>"; 
-        
-                    echo nl2br("\n$fullname\n $fathername\n "
-                        . "$age\n $telno\n $emailadd\n $taxno\n $securityno\n $cardno\n $cardexp\n $cardholder\n $comments");
+                    $result = $conn->query($sql);
+                    echo nl2br("<h2>Here are the resutls of your search.\r\n" 
+                        . " If nothing shows up, the registration that you are looking for does not exist in the database</h2>\r\n\r\n");
+                    
+                    foreach($result as $row) {
+                        echo nl2br("<h2>Fullname:</h2>\n<h3>" . $row['FULLNAME'] . "</h3>\r\n\r\n" . "<h2>Fathername:</h2>\n<h3>" . $row['FATHERNAME'] . "</h3>\r\n\r\n" . "<h2>Age:</h2>\n<h3>" . $row['AGE'] . 
+                        "</h3>\r\n\r\n" . "<h2>Phone number:</h2>\n<h3>" . $row['PHONE'] . "</h3>\r\n\r\n" . "<h2>Email:</h2>\n<h3>" . $row['EMAIL'] . "</h3>\r\n\r\n" . "<h2>Tax number(AFM):</h2>\n<h3>" . $row['AFM'] . "</h3>\r\n\r\n" .
+                        "<h2>Social Security number (AMKA):</h2>\n<h3>" . $row['AMKA'] . "</h3>\r\n\r\n" . "<h2>Credit card number:</h2>\n<h3>" . $row['CARDNO'] . "</h3>\r\n\r\n" . "<h2>Credit card expiration date:</h2>\n<h3>" . $row['CARDEXP'] . "</h3>\r\n\r\n" .
+                        "<h2>Cardholder's address:</h2>\n<h3>" . $row['CARDHOLDADDRESS'] . "</h3>\r\n\r\n" . "<h2>Comments:</h2>\n<h3>" . $row['COMM'] . "</h3>\r\n\r\n");
+                    }    
                 } else{
                     echo "ERROR: Hush! Sorry $sql. " 
                         . mysqli_error($conn);
