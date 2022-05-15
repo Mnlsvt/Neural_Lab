@@ -21,7 +21,7 @@ function check(event) {
 
     // (C2) FATHER_NAME
     var fathername = document.getElementById("fathername").value;
-    var fathernameRGEX = /^[a-zA-Z]+\S$/;
+    var fathernameRGEX = /^[a-zA-Z]+\S$/;                       // Logw autou to expression de dexetai ellhnikous xarakthres
     var fathernameResult = fathernameRGEX.test(fathername);
 
     field = document.getElementById("fathername");
@@ -127,9 +127,8 @@ function check(event) {
     }
 
     // (C2) CARDHOLDER'S-ADDRESS
-    // alfarithmitiko!
     var cardholder = document.getElementById("cardholder").value;
-    var cardholderRGEX = /^[a-zA-Z]+$/;
+    var cardholderRGEX = /^[a-zA-Z]+\s\d$/;         // alfarithmitiko!
     var cardholderResult = cardholderRGEX.test(cardholder);
 
     field = document.getElementById("cardholder");

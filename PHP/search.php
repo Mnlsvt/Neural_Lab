@@ -83,18 +83,16 @@
 
                 $conn->query("USE RESDB");
                 
-                // Taking all 5 values from the form data(input)
+                // Taking all 5 values from the form our search form
                 $fullname =  $_REQUEST['fullnamesearch'];
                 $age =  $_REQUEST['agesearch'];
                 $taxno = $_REQUEST['taxnosearch'];
                 $comments = $_REQUEST['commentssearch'];
 
-                //echo "auto einai to fullname   $fullname";
-
                 // Performing select query execution
                 // here our table name is clients
-                $combs = array(1, 1, 1, 1);
 
+                // Building the sql string for the multiple SELECT combinations
                 $sql = "SELECT * FROM CLIENTS WHERE ";
                 $k = 0;
                 
@@ -143,12 +141,12 @@
                     }
                 }
 
-                if(mysqli_query($conn, $sql)){
+                if(mysqli_query($conn, $sql)){ // trexei th SELECT kai pairnei ta apotelesmata
                     $result = $conn->query($sql);
                     echo nl2br("<h2>Here are the resutls of your search.\r\n" 
                         . " If nothing shows up, the registration that you are looking for does not exist in the database</h2>\r\n\r\n");
                     
-                    foreach($result as $row) {
+                    foreach($result as $row) { // gia kathe apotelesma pou vrhke emfanizei olo to row tou table
                         echo nl2br("<h2>Fullname:</h2>\n<h3>" . $row['FULLNAME'] . "</h3>\r\n\r\n" . "<h2>Fathername:</h2>\n<h3>" . $row['FATHERNAME'] . "</h3>\r\n\r\n" . "<h2>Age:</h2>\n<h3>" . $row['AGE'] . 
                         "</h3>\r\n\r\n" . "<h2>Phone number:</h2>\n<h3>" . $row['PHONE'] . "</h3>\r\n\r\n" . "<h2>Email:</h2>\n<h3>" . $row['EMAIL'] . "</h3>\r\n\r\n" . "<h2>Tax number(AFM):</h2>\n<h3>" . $row['AFM'] . "</h3>\r\n\r\n" .
                         "<h2>Social Security number (AMKA):</h2>\n<h3>" . $row['AMKA'] . "</h3>\r\n\r\n" . "<h2>Credit card number:</h2>\n<h3>" . $row['CARDNO'] . "</h3>\r\n\r\n" . "<h2>Credit card expiration date:</h2>\n<h3>" . $row['CARDEXP'] . "</h3>\r\n\r\n" .
@@ -158,23 +156,12 @@
                     echo "ERROR: Hush! Sorry $sql. " 
                         . mysqli_error($conn);
                 }
-                
-                
-                if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['deleteentry']))
-                {
-                    $conn->query("DELETE FROM CLIENTS WHERE AFM = '$taxno_delete' AND FULLNAME LIKE '%$fullname_delete%' AND AGE = '$age_delete' AND COMM LIKE '%$comments_delete%'");
-                }
 
                 // Close connection
                 mysqli_close($conn);
             ?>
             </center>
 
-            <form class="db_forms" action="delete_entry.php" method="post">
-                <center><button class="db_buttons" style="margin-bottom: 3em; color:white; width: 70%; background-color: #2f3e46; padding: 14px 20px; margin: 8px 0; border: none; border-radius: 4px; cursor: pointer;" type="submit" name="deleteentry">Delete entries</button></center>
-                <div id="cdeleteentry" class="emsg"></div>
-            </form>
-        
     </body>
     
 </html>

@@ -484,6 +484,26 @@ input[type=number] {
   color: #cac9c9;
 }
 
+.db_buttons {
+  width: 100%;
+  background-color: #2f3e46;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.db_buttons:hover {
+  background-color: #52796f;
+}
+
+.searchform {
+  margin-left: 3em;
+  margin-right: 3em;
+}
+
 @media only screen and (min-width: 640px) {
   .eikona-left .content {
     width: 20rem;

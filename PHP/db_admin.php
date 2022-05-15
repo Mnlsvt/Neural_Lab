@@ -71,7 +71,8 @@
               <h1>Database administratrion.</h1>
           </div>
 
-          <!-- Gia kapoio logo den mporousa na ta sundesw me th css opote ta egrapsa mesa sto style -->
+          <!-- Gia kapoio logo den mporousame na ta sundesoume me th css opote ta grpapsame mesa sto style -->
+          <!-- Auta einai ta koumpia gia tis epiloges tou admin gia to database apla ta valame mesa se forms gia na mporei na ginetai POST sthn php -->
             <form class="db_forms" action="db_admin.php" method="post">
                 <center><button class="db_buttons" style="margin-bottom: 3em; color:white; width: 70%; background-color: #2f3e46; padding: 14px 20px; margin: 8px 0; border: none; border-radius: 4px; cursor: pointer;" type="submit" name="createdb">Create Database</button></center>
                 <div id="dbcreated" class="emsg"></div>
@@ -104,9 +105,9 @@
             <!-- The form for searching members -->
             <div class="welcome-sect">
               <h1>Search in Subscribers.</h1>
-          </div>
-
-            <form id="form" action="search.php" onsubmit="" method="post"> <!-- kati allo pou tha psaxnei oxi validate-->
+            </div>
+                
+            <form style="margin-left: 8em; margin-right: 8em;" class="searchform" id="form" action="search.php" onsubmit="" method="post"> <!-- kati allo pou tha psaxnei oxi validate-->
                 <label for="fullname">Full name</label> <!-- full name, max 50 characters and required field, must not contain special character (only one space)-->
                 <input type="text" id="fullnamesearch" name="fullnamesearch" placeholder="Full name..">  
                 
@@ -255,8 +256,7 @@
                     die("Connection failed: " . mysqli_connect_error());
                 }
                 
-                //echo "Connected successfully";
-                
+
                 //Delete Table Clients
                 $conn->query("USE RESDB");
                 $sql = "DROP TABLE IF EXISTS CLIENTS";
@@ -291,9 +291,7 @@
                 if (!$conn) {
                     die("Connection failed: " . mysqli_connect_error());
                 }
-                //echo "Connected successfully";
 
-                
                 // sql to delete a database
                 $sql = "DROP DATABASE IF EXISTS RESDB"; // an uparxei tote th svhnei alliws den kanei tipota
 
@@ -305,7 +303,7 @@
             }
 
 
-
+                // Gia kathe koumpi pou tha patietai apo ta create database, create table klp... tha kalei mia apo tis parakatrw synarthseis
                 if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['createdb']))
                 {
                     database_creation();
@@ -338,68 +336,20 @@
           
 
 
-          <!--
-              To script auto einai gia na mporei na anoigei kai na kleinei to side-bar otan h selida einai sth mobile morfh ths.
-          -->
-          <script>
-              const menu = document.querySelector(".menu")
-              const close = document.querySelector(".close")
-              const nav = document.querySelector("nav")
-  
-              menu.addEventListener("click", () =>{
-                  nav.classList.add("open-nav")
-              })
-  
-              close.addEventListener("click", () =>{
-                  nav.classList.remove("open-nav")
-              })
-
-              // mia idea gia ena pop up window pou tha rwtaei an o xrhsths thelei ontws na svhsei th vash
-              function areYouSure() {
-                var txt;
-                if (confirm("Are you sure that you want to delete the database?")) {
-                    txt = "You pressed OK!";
-                } else {
-                    txt = "You pressed Cancel!";
-                }
-                document.getElementById("demo").innerHTML = txt;
-}
-
-
-              // den to akoumpame!!!!!!!!!
-                $(document).ready(function(){
-                    $('.buttondb').click(function(){
-                        var clickBtnValue = $(this).val();
-                        var ajaxurl = 'ajax.php',
-                        data =  {'action': clickBtnValue};
-                        $.post(ajaxurl, data, function (response) {
-                            // Response div goes here.
-                            alert("action performed successfully");
-                        });
-                    });
-                });
-            
-
-          </script>
-
-          <!--
-          <a class="zoom_in-light" href="#" onclick="setActiveStyleSheet('vision-help'); return false;"><img class="zoom_in-light" src="images/zoom_in_light.png"></a>
-          <a class="zoom_out-light" href="#" onclick="setActiveStyleSheet('light-mode'); return false;"><img class="zoom_out-light" src="images/zoom_out_light.png"></a>
-
-          <a class="zoom_in-dark" href="#" onclick="setActiveStyleSheet('vision-help-dark'); return false;"><img class="zoom_in-dark" src="images/zoom_in_dark.png"></a>
-          <a class="zoom_out-dark" href="#" onclick="setActiveStyleSheet('dark-mode'); return false;"><img class="zoom_out-dark" src="images/zoom_out_dark.png"></a>
-
-          <a class="voice_help1_light" href="#" onclick="voice_help1(); return false;"><img class="voice_help1_light" src="images/voice_light.png"></a>
-          <a class="voice_help2_light" href="#" onclick="voice_help2(); return false;"><img class="voice_help2_light" src="images/voice_light.png"></a>
-
-          <a class="voice_help1_dark" href="#" onclick="voice_help1(); return false;"><img class="voice_help1_dark" src="images/voice_dark.png"></a>
-          <a class="voice_help2_dark" href="#" onclick="voice_help2(); return false;"><img class="voice_help2_dark" src="images/voice_dark.png"></a>
-          -->
-
-
-
-          
-
+        <!-- To script auto einai gia na mporei na anoigei kai na kleinei to side-bar otan h selida einai sth mobile morfh ths. -->
+            <script>
+                const menu = document.querySelector(".menu")
+                const close = document.querySelector(".close")
+                const nav = document.querySelector("nav")
+    
+                menu.addEventListener("click", () =>{
+                    nav.classList.add("open-nav")
+                })
+    
+                close.addEventListener("click", () =>{
+                    nav.classList.remove("open-nav")
+                })
+            </script>
 
       </body>
 </html>
